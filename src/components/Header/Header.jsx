@@ -13,6 +13,8 @@ const Header = () => (
         <li>
           <Link to="women">Women</Link>
         </li>
+        <li>Kids</li>
+        <li>Sale</li>
       </ul>
     </nav>
     <div>
