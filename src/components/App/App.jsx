@@ -1,5 +1,5 @@
 import HomePage from '../HomePage/HomePage';
-import './App.css';
+import './App.module.css';
 
 const App = () => <HomePage />;
 

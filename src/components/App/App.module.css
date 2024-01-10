@@ -2,6 +2,8 @@
 /* Inspired by: https://www.joshwcomeau.com/css/custom-css-reset/
 /******************************************************************************/
 
+/* TODO: add global root variables */
+
 *,
 *::before,
 *::after {
