@@ -2,6 +2,11 @@
   grid-row: 2 / 3;
 }
 
+.hidden {
+  position: absolute;
+  left: -999999999px;
+}
+
 .images {
   display: flex;
   gap: var(--gap-sm);

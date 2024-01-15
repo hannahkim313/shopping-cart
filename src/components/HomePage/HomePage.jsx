@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 
 const HomePage = () => (
   <main className={styles.main}>
+    <h1 className={styles.hidden}>Urban Thread home page</h1>
     <Banner />
     <div className={styles.images}>
       <div>
@@ -28,6 +29,7 @@ const HomePage = () => (
         />
       </div>
     </div>
+    <h2 className={styles.hidden}>Brand motto</h2>
     <div className={styles.motto}>
       <p className={styles.main}>
         ELEVATE YOUR STYLE
@@ -44,6 +46,7 @@ const HomePage = () => (
         <Link to="women">SHOP WOMEN</Link>
       </div>
     </div>
+    <h2 className={styles.hidden}>How the brand began</h2>
     <aside className={styles.story}>
       <p className={styles.title}>
         Redefining fashion with every stitch since 1945

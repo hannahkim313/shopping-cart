@@ -7,3 +7,8 @@
   text-align: center;
   font-weight: bold;
 }
+
+.hidden {
+  position: absolute;
+  left: -999999999px;
+}
