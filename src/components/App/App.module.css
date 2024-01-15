@@ -2,7 +2,26 @@
 /* Inspired by: https://www.joshwcomeau.com/css/custom-css-reset/
 /******************************************************************************/
 
-/* TODO: add global root variables */
+:root {
+  --color-text: #2f2b20;
+  --color-text-inverted: white;
+  --color-neutral-1: #f2f2f2;
+  --color-neutral-2: #e6e6e6;
+  --color-brand-1: #f7eee0;
+  --color-brand-2: #334253;
+  --color-brand-3: #f4e165;
+  --icon-size: 1.6rem;
+  --padding-xsm: 0.5rem;
+  --padding-sm: 1rem;
+  --padding-lg: 4rem;
+  --padding-split-sm: 0.5rem var(--padding-sm);
+  --padding-split-lg: calc(var(--padding-lg) / 1.5) var(--padding-lg);
+  --gap-sm: 0.5rem;
+  --gap-med: 1rem;
+  --gap-lg: calc(var(--gap-med) * 1.5);
+  --border-radius-circle: 100%;
+  --border-radius-oval: 50px;
+}
 
 *,
 *::before,
@@ -21,9 +40,23 @@ body {
 }
 
 body {
+  color: var(--color-text);
   font-family: 'Inter', 'Open Sans', 'Source Sans 3', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+li {
+  list-style: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 img,

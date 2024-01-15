@@ -1,6 +1,6 @@
-import HomePage from '../HomePage/HomePage';
+import Page from '../Page/Page';
 import './App.module.css';
 
-const App = () => <HomePage />;
+const App = () => <Page />;
 
 export default App;

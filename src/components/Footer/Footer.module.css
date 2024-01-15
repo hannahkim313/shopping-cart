@@ -1,0 +1,79 @@
+footer {
+  grid-row: 3 / 4;
+}
+
+.newsletter {
+  padding: var(--padding-split-lg);
+  background-color: var(--color-brand-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+}
+
+.signUp {
+  font-weight: bold;
+  color: var(--color-text-inverted);
+  padding: var(--padding-split-sm);
+  background-color: var(--color-text);
+  border: none;
+  border-radius: var(--border-radius-oval);
+}
+
+.links {
+  font-size: small;
+  color: white;
+  padding: var(--padding-split-lg);
+  background-color: var(--color-brand-2);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.links a {
+  color: var(--color-text-inverted);
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLinks {
+  display: flex;
+  gap: 5rem;
+}
+
+.navLinksSet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.socials {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-med);
+}
+
+.specialLinks {
+  display: flex;
+  gap: var(--gap-lg);
+}
+
+.icon {
+  width: var(--icon-size);
+}
+
+.hidden {
+  position: absolute;
+  left: -999999999px;
+}

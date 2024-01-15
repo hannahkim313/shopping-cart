@@ -1,0 +1,68 @@
+.main {
+  grid-row: 2 / 3;
+}
+
+.images {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.image {
+  object-fit: contain;
+}
+
+.motto {
+  text-align: center;
+  padding: var(--padding-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+.motto .main {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.motto .sub {
+  font-size: large;
+}
+
+.navLinks {
+  display: flex;
+  gap: var(--gap-lg);
+}
+
+.navLinks a {
+  font-weight: bold;
+  color: var(--color-text-inverted);
+  background-color: var(--color-text);
+  padding: var(--padding-split-sm);
+  border-radius: var(--border-radius-oval);
+}
+
+.story {
+  padding: var(--padding-split-lg);
+  background-color: var(--color-brand-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-med);
+}
+
+.story .title {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.story .content {
+  display: flex;
+  gap: var(--gap-med);
+}
+
+.story .col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-med);
+}

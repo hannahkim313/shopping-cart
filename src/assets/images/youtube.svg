@@ -1,22 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve" width="512" height="512">
-<g id="XMLID_184_">
-	<path d="M23.498,6.186c-0.276-1.039-1.089-1.858-2.122-2.136C19.505,3.546,12,3.546,12,3.546s-7.505,0-9.377,0.504   C1.591,4.328,0.778,5.146,0.502,6.186C0,8.07,0,12,0,12s0,3.93,0.502,5.814c0.276,1.039,1.089,1.858,2.122,2.136   C4.495,20.454,12,20.454,12,20.454s7.505,0,9.377-0.504c1.032-0.278,1.845-1.096,2.122-2.136C24,15.93,24,12,24,12   S24,8.07,23.498,6.186z M9.546,15.569V8.431L15.818,12L9.546,15.569z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(1 0 0 1 540 540)" id="f07a1543-36de-46f0-a141-b5c741c7eae9"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
 </g>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<g transform="matrix(1 0 0 1 540 540)" id="b8930611-c742-47af-8e74-fb408a992613"  >
+</g>
+<g transform="matrix(42.59 0 0 42.59 540 540)" id="f1ed91eb-beb4-43c7-bf6f-ee4c81d88d2f"  >
+<path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-12, -12)" d="M 23.498 6.186 C 23.222 5.147 22.409000000000002 4.327999999999999 21.376 4.05 C 19.505 3.546 12 3.546 12 3.546 C 12 3.546 4.495 3.546 2.6229999999999993 4.05 C 1.591 4.328 0.778 5.146 0.502 6.186 C 0 8.07 0 12 0 12 C 0 12 0 15.93 0.502 17.814 C 0.778 18.853 1.591 19.672 2.6239999999999997 19.95 C 4.495 20.454 12 20.454 12 20.454 C 12 20.454 19.505 20.454 21.377000000000002 19.95 C 22.409000000000002 19.672 23.222 18.854 23.499000000000002 17.814 C 24 15.93 24 12 24 12 C 24 12 24 8.07 23.498 6.186 z M 9.546 15.569 L 9.546 8.431 L 15.818 12 L 9.546 15.569 z" stroke-linecap="round" />
+</g>
 </svg>
