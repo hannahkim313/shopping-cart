@@ -24,6 +24,10 @@ footer {
   border-radius: var(--border-radius-oval);
 }
 
+.signUp:hover {
+  background-color: var(--color-neutral-2a);
+}
+
 .links {
   font-size: small;
   color: white;

@@ -39,12 +39,16 @@
   gap: var(--gap-lg);
 }
 
-.navLinks a {
+.linkDark {
   font-weight: bold;
   color: var(--color-text-inverted);
   background-color: var(--color-text);
   padding: var(--padding-split-sm);
   border-radius: var(--border-radius-oval);
+}
+
+.linkDark:hover {
+  background-color: var(--color-neutral-2a);
 }
 
 .story {

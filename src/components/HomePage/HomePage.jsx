@@ -42,8 +42,12 @@ const HomePage = () => (
         where every outfit becomes a statement of your true self.
       </p>
       <div className={styles.navLinks}>
-        <Link to="men">SHOP MEN</Link>
-        <Link to="women">SHOP WOMEN</Link>
+        <Link className={styles.linkDark} to="men">
+          SHOP MEN
+        </Link>
+        <Link className={styles.linkDark} to="women">
+          SHOP WOMEN
+        </Link>
       </div>
     </div>
     <h2 className={styles.hidden}>How the brand began</h2>
