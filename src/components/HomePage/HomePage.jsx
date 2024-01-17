@@ -42,10 +42,10 @@ const HomePage = () => (
         where every outfit becomes a statement of your true self.
       </p>
       <div className={styles.navLinks}>
-        <Link className={styles.linkDark} to="men">
+        <Link className={styles.linkDark} to="/men">
           SHOP MEN
         </Link>
-        <Link className={styles.linkDark} to="women">
+        <Link className={styles.linkDark} to="/women">
           SHOP WOMEN
         </Link>
       </div>

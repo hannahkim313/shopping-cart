@@ -13,10 +13,10 @@ const Header = () => (
     <nav className={styles.navLinksProducts}>
       <ul>
         <li>
-          <Link to="men">Men</Link>
+          <Link to="/men">Men</Link>
         </li>
         <li>
-          <Link to="women">Women</Link>
+          <Link to="/women">Women</Link>
         </li>
         <li>
           <button type="button">Kids</button>
@@ -41,7 +41,7 @@ const Header = () => (
           alt="My favorites"
         />
       </button>
-      <Link to="bag">
+      <Link to="/bag">
         <img
           className={styles.icon}
           src="../src/assets/images/shopping-bag.svg"

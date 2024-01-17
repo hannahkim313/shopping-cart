@@ -23,8 +23,8 @@ const Footer = () => (
           <div className={styles.navLinks}>
             <div className={styles.navLinksSet}>
               <h3>SHOP</h3>
-              <Link to="men">Men</Link>
-              <Link to="women">Women</Link>
+              <Link to="/men">Men</Link>
+              <Link to="/women">Women</Link>
               <p>Kids</p>
               <p>Sale</p>
               <p>Gift Cards</p>
