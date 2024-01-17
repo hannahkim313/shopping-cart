@@ -1,14 +1,18 @@
+import PropTypes from 'prop-types';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import HomePage from '../HomePage/HomePage';
 import styles from './Page.module.css';
 
-const Page = () => (
+const Page = ({ children }) => (
   <div className={styles.page}>
     <Header />
-    <HomePage />
+    {children}
     <Footer />
   </div>
 );
+
+Page.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Page;
