@@ -17,7 +17,7 @@ const Router = () => {
       path: 'men',
       element: (
         <Page>
-          <MenPage />,
+          <MenPage />
         </Page>
       ),
     },
@@ -25,7 +25,7 @@ const Router = () => {
       path: 'women',
       element: (
         <Page>
-          <WomenPage />,
+          <WomenPage />
         </Page>
       ),
     },
@@ -33,7 +33,7 @@ const Router = () => {
       path: 'bag',
       element: (
         <Page>
-          <ShoppingBagEmpty />,
+          <ShoppingBagEmpty />
         </Page>
       ),
     },
