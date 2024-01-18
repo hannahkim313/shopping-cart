@@ -34,7 +34,7 @@ describe('rendered elements of the empty shopping bag page', () => {
 
 describe('navigation of links to correct route', () => {
   it('renders the men shopping page when the nav link is clicked', async () => {
-    renderWithRouter(setRoutes('/men', <MenPage />), { route: '/bag' });
+    renderWithRouter(setRoutes('/men', <MenPage />));
     const link = screen.getByRole('link', { name: 'SHOP MEN' });
     await userEvent.click(link);
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
