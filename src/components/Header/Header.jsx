@@ -7,7 +7,7 @@ const Header = () => (
       <img
         className={styles.logo}
         src="../src/assets/images/logo.png"
-        alt="Shopping bag icon"
+        alt="Urban Thread home page"
       />
     </Link>
     <nav className={styles.navLinksProducts}>
