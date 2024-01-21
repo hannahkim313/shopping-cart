@@ -10,3 +10,4 @@ This project, created by The Odin Project, is a mock shopping cart to practice w
 - Miscellaneous icons from [Google Fonts](https://fonts.google.com/)
 - Social media icons from Ulcons on [Freepik](https://www.freepik.com/author/uicons/icons/uicons-brands-solid_5089)
 - Home page photos from Freepik on [Freepik](https://www.freepik.com/serie/27590780)
+- 404 image from storyset on [Freepik](https://www.freepik.com/free-vector/page-found-concept-illustration_7887410.htm#query=404&position=3&from_view=search&track=sph&uuid=b8afd1a0-01cd-4fb4-9649-f11c65c009e3)
