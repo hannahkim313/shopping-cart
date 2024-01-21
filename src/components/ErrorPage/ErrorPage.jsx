@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom';
+import styles from './ErrorPage.module.css';
 
 const ErrorPage = () => (
-  <>
-    <h1>Oh no, this route does not exist!</h1>
-    <Link to="/">Click here to go back to the home page.</Link>
-  </>
+  <main className={styles.main}>
+    <h1 className={styles.hidden}>404 error</h1>
+    <img
+      className={styles.errorImg}
+      src="../src/assets/images/404.jpg"
+      alt=""
+    />
+    <p className={styles.errorText}>Page not found</p>
+    <Link className={styles.return} to="/">
+      Return to the home page
+    </Link>
+  </main>
 );
 
 export default ErrorPage;

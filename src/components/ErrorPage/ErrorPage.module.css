@@ -1,0 +1,33 @@
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-lg);
+}
+
+.errorImg {
+  width: 500px;
+}
+
+.errorText {
+  font-size: 1.5rem;
+}
+
+.return {
+  font-weight: bold;
+  color: var(--color-text-inverted);
+  background-color: var(--color-text);
+  padding: var(--padding-split-sm);
+  border-radius: var(--border-radius-oval);
+}
+
+.return:hover {
+  background-color: var(--color-neutral-3);
+}
+
+.hidden {
+  position: absolute;
+  left: -999999999px;
+}
