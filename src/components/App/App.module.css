@@ -14,9 +14,11 @@
   --icon-size: 1.6rem;
   --padding-xsm: 0.5rem;
   --padding-sm: 1rem;
-  --padding-lg: 4rem;
+  --padding-lg: 3rem;
+  --padding-xl: 4rem;
   --padding-split-sm: 0.5rem var(--padding-sm);
-  --padding-split-lg: calc(var(--padding-lg) / 1.5) var(--padding-lg);
+  --padding-split-med: 1rem var(--padding-lg);
+  --padding-split-lg: calc(var(--padding-xl) / 1.5) var(--padding-lg);
   --gap-sm: 0.5rem;
   --gap-med: 1rem;
   --gap-lg: calc(var(--gap-med) * 1.5);

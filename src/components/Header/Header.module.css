@@ -1,7 +1,7 @@
 header {
   font-size: large;
   font-weight: bold;
-  padding: var(--padding-sm);
+  padding: var(--padding-split-med);
   grid-row: 1 / 2;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -31,7 +31,7 @@ header button {
 .navLinksProducts ul {
   display: flex;
   align-items: center;
-  gap: var(--gap-sm);
+  gap: var(--gap-lg);
 }
 
 .navLinksProducts a {
@@ -39,7 +39,7 @@ header button {
 }
 
 .navLinksProducts li > * {
-  padding: var(--padding-split-sm);
+  padding: var(--padding-xsm);
   border-bottom: 2px solid transparent;
 }
 
