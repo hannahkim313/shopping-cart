@@ -64,7 +64,7 @@ describe('navigation of links to correct route', () => {
     const link = screen.getByRole('link', { name: /bag/i });
     await userEvent.click(link);
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
-      'Your bag'
+      /bag/i
     );
   });
 });

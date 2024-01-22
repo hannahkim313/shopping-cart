@@ -3,7 +3,7 @@ import styles from './ShoppingBagEmpty.module.css';
 
 const ShoppingBagEmpty = () => (
   <main className={styles.main}>
-    <h1>Your bag</h1>
+    <h1>Your Bag</h1>
     <p>There are no items in your bag.</p>
     <div className={styles.links}>
       <Link className={styles.linkDark} to="/men">
