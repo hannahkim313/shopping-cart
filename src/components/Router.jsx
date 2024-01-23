@@ -1,10 +1,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import ErrorPage from '../ErrorPage/ErrorPage';
-import App from '../App/App';
-import MenPage from '../MenPage/MenPage';
-import WomenPage from '../WomenPage/WomenPage';
-import ShoppingBagEmpty from '../ShoppingBagEmpty/ShoppingBagEmpty';
-import Page from '../Page/Page';
+import ErrorPage from './ErrorPage/ErrorPage';
+import App from './App/App';
+import MenPage from './MenPage/MenPage';
+import WomenPage from './WomenPage/WomenPage';
+import ShoppingBagEmpty from './ShoppingBagEmpty/ShoppingBagEmpty';
+import Page from './Page/Page';
 
 const Router = () => {
   const router = createBrowserRouter([
