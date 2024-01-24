@@ -3,7 +3,7 @@ import styles from './AllProductsPage.module.css';
 import capitalize from '../../utils/capitalize';
 
 const AllProductsPage = ({ category }) => (
-  <main>
+  <main className={styles.main}>
     <h1>{capitalize(category)}</h1>
     <section className={styles.products}>
       <h2 className={styles.hidden}>All products</h2>
