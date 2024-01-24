@@ -1,8 +1,7 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithRouter, setRoutes } from '../../tests/test-utils';
-import MenPage from '../MenPage/MenPage';
-import WomenPage from '../WomenPage/WomenPage';
+import { renderWithRouter, setRoutes } from '../../utils/test-utils';
+import AllProductsPage from '../AllProductsPage/AllProductsPage';
 import Footer from './Footer';
 import App from '../App/App';
 
@@ -27,7 +26,14 @@ describe('rendered elements of the footer from the default home page', () => {
 
 describe('navigation of links to correct route', () => {
   it('renders the men shopping page when the nav link is clicked', async () => {
-    renderWithRouter(setRoutes('/', <App />, '/men', <MenPage />));
+    renderWithRouter(
+      setRoutes(
+        '/',
+        <App />,
+        '/men',
+        <AllProductsPage category="men's clothing" />
+      )
+    );
     const links = screen.getAllByRole('link', { name: 'Men' });
     const link = links[links.length - 1];
     await userEvent.click(link);
@@ -37,7 +43,14 @@ describe('navigation of links to correct route', () => {
   });
 
   it('renders the women shopping page when the nav link is clicked', async () => {
-    renderWithRouter(setRoutes('/', <App />, '/women', <WomenPage />));
+    renderWithRouter(
+      setRoutes(
+        '/',
+        <App />,
+        '/women',
+        <AllProductsPage category="women's clothing" />
+      )
+    );
     const links = screen.getAllByRole('link', { name: 'Women' });
     const link = links[links.length - 1];
     await userEvent.click(link);

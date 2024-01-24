@@ -1,9 +1,8 @@
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
-import { renderWithRouter, setRoutes } from '../../tests/test-utils';
+import { renderWithRouter, setRoutes } from '../../utils/test-utils';
 import HomePage from './HomePage';
-import MenPage from '../MenPage/MenPage';
-import WomenPage from '../WomenPage/WomenPage';
+import AllProductsPage from '../AllProductsPage/AllProductsPage';
 import App from '../App/App';
 
 describe('rendered elements of the home page', () => {
@@ -22,7 +21,14 @@ describe('rendered elements of the home page', () => {
 
 describe('navigation of links to correct route', () => {
   it('renders the men shopping page when the nav link is clicked', async () => {
-    renderWithRouter(setRoutes('/', <App />, '/men', <MenPage />));
+    renderWithRouter(
+      setRoutes(
+        '/',
+        <App />,
+        '/men',
+        <AllProductsPage category="men's clothing" />
+      )
+    );
     const link = screen.getByRole('link', { name: 'SHOP MEN' });
     await userEvent.click(link);
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
@@ -31,7 +37,14 @@ describe('navigation of links to correct route', () => {
   });
 
   it('renders the women shopping page when the nav link is clicked', async () => {
-    renderWithRouter(setRoutes('/', <App />, '/women', <WomenPage />));
+    renderWithRouter(
+      setRoutes(
+        '/',
+        <App />,
+        '/women',
+        <AllProductsPage category="women's clothing" />
+      )
+    );
     const link = screen.getByRole('link', { name: 'SHOP WOMEN' });
     await userEvent.click(link);
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(

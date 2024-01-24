@@ -1,8 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import ErrorPage from './ErrorPage/ErrorPage';
 import App from './App/App';
-import MenPage from './MenPage/MenPage';
-import WomenPage from './WomenPage/WomenPage';
+import AllProductsPage from './AllProductsPage/AllProductsPage';
 import ShoppingBagEmpty from './ShoppingBagEmpty/ShoppingBagEmpty';
 import Page from './Page/Page';
 
@@ -17,7 +16,7 @@ const Router = () => {
       path: 'men',
       element: (
         <Page>
-          <MenPage />
+          <AllProductsPage category="men's clothing" />
         </Page>
       ),
     },
@@ -25,7 +24,7 @@ const Router = () => {
       path: 'women',
       element: (
         <Page>
-          <WomenPage />
+          <AllProductsPage category="women's clothing" />
         </Page>
       ),
     },

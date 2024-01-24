@@ -24,6 +24,7 @@
   --gap-lg: calc(var(--gap-med) * 1.5);
   --border-radius-circle: 100%;
   --border-radius-oval: 50px;
+  --border-radius-rounded-corners: 0.5rem;
 }
 
 *,

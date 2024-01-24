@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { renderWithRouter, setRoutes } from '../../tests/test-utils';
+import { renderWithRouter, setRoutes } from '../../utils/test-utils';
 import ErrorPage from './ErrorPage';
 import App from '../App/App';
 
