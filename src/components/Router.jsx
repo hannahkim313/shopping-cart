@@ -3,7 +3,6 @@ import ErrorPage from './ErrorPage/ErrorPage';
 import App from './App/App';
 import AllProductsPage from './AllProductsPage/AllProductsPage';
 import ShoppingBagEmpty from './ShoppingBagEmpty/ShoppingBagEmpty';
-import Page from './Page/Page';
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -13,28 +12,16 @@ const Router = () => {
       errorElement: <ErrorPage />,
     },
     {
-      path: 'men',
-      element: (
-        <Page>
-          <AllProductsPage category="men's clothing" />
-        </Page>
-      ),
+      path: 'men/products?/:productId?',
+      element: <AllProductsPage category="men's clothing" />,
     },
     {
-      path: 'women',
-      element: (
-        <Page>
-          <AllProductsPage category="women's clothing" />
-        </Page>
-      ),
+      path: 'women/products?/:productId?',
+      element: <AllProductsPage category="women's clothing" />,
     },
     {
       path: 'bag',
-      element: (
-        <Page>
-          <ShoppingBagEmpty />
-        </Page>
-      ),
+      element: <ShoppingBagEmpty />,
     },
   ]);
 

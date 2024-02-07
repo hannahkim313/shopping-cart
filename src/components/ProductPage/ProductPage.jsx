@@ -1,0 +1,48 @@
+import PropTypes from 'prop-types';
+import styles from './ProductPage.module.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import StarRating from '../StarRating/StarRating';
+
+const ProductPage = ({ data }) => (
+  <>
+    <Header />
+    <main className={styles.main}>
+      <img className={styles.productImg} src={data.image} alt="" />
+      <div className={styles.productInfoContainer}>
+        <div className={styles.topInfoContainer}>
+          <h1>{data.title}</h1>
+          <h2 className={styles.hidden}>Reviews</h2>
+          <h3 className={styles.hidden}>Rating: {data.rating.rate}</h3>
+          <div className={styles.rating}>
+            <div className={styles.stars}>
+              <StarRating rating={data.rating.rate} />
+            </div>
+            <h3 className={styles.hidden}>Number of reviews</h3>
+            <p>{`(${data.rating.count})`}</p>
+          </div>
+          <p className={styles.price}>{`$${data.price.toFixed(2)}`}</p>
+        </div>
+        <div className={styles.divider} />
+        <h2 className={styles.hidden}>Description</h2>
+        <p className={styles.productDescription}>{data.description}</p>
+        <div className={styles.buttons}>
+          <button className={styles.add} type="button">
+            Add to bag
+          </button>
+          <button className={styles.favorite} type="button">
+            Favorite
+            <img src="/src/assets/images/favorite.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </>
+);
+
+ProductPage.propTypes = {
+  data: PropTypes.oneOfType([PropTypes.object]).isRequired,
+};
+
+export default ProductPage;

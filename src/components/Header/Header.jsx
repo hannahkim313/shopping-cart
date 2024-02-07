@@ -6,7 +6,7 @@ const Header = () => (
     <Link to="/">
       <img
         className={styles.logo}
-        src="../src/assets/images/logo.png"
+        src="/src/assets/images/logo.png"
         alt="Urban Thread home page"
       />
     </Link>
@@ -30,21 +30,21 @@ const Header = () => (
       <button type="button">
         <img
           className={styles.icon}
-          src="../src/assets/images/account.svg"
+          src="/src/assets/images/account.svg"
           alt="My account"
         />
       </button>
       <button type="button">
         <img
           className={styles.icon}
-          src="../src/assets/images/favorite.svg"
+          src="/src/assets/images/favorite.svg"
           alt="My favorites"
         />
       </button>
       <Link to="/bag">
         <img
           className={styles.icon}
-          src="../src/assets/images/shopping-bag.svg"
+          src="/src/assets/images/shopping-bag.svg"
           alt="My shopping bag"
         />
       </Link>

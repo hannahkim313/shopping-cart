@@ -1,4 +1,5 @@
 .product {
+  text-align: center;
   padding: var(--padding-sm);
   display: flex;
   flex-direction: column;

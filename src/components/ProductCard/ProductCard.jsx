@@ -1,21 +1,22 @@
-// Uncomment after implementing the rest of the logic
-// import styles from './ProductCard.module.css';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import styles from './ProductCard.module.css';
 
-/* TODO:
-  Implement logic that returns a JSX element representing a single product
-  card element like the commented code below
-*/
+const ProductCard = ({ id, title, price, image }) => (
+  <article className={styles.product}>
+    <Link to={`products/${id}`}>
+      <img className={styles.productImg} src={image} alt="" />
+      <h3>{title}</h3>
+    </Link>
+    <p>${price.toFixed(2)}</p>
+  </article>
+);
 
-/* <article className={styles.product}>
-  // FIXME: The url should be the 'id' value from the fetched API call
-  <Link to="/2">
-    <img
-      className={styles.productImg}
-      // FIXME: This url should be from the same object containing the 'id' value from above
-      src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
-      alt=""
-    />
-    <h3>Product name</h3>
-  </Link>
-  <p>$22.30</p>
-</article>; */
+ProductCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+};
+
+export default ProductCard;

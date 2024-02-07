@@ -49,27 +49,27 @@ const Footer = () => (
             <h3 className={styles.hidden}>Our socials</h3>
             <img
               className={styles.icon}
-              src="../src/assets/images/youtube.svg"
+              src="/src/assets/images/youtube.svg"
               alt="Youtube icon"
             />
             <img
               className={styles.icon}
-              src="../src/assets/images/instagram.svg"
+              src="/src/assets/images/instagram.svg"
               alt="Instagram icon"
             />
             <img
               className={styles.icon}
-              src="../src/assets/images/tiktok.svg"
+              src="/src/assets/images/tiktok.svg"
               alt="TikTok icon"
             />
             <img
               className={styles.icon}
-              src="../src/assets/images/twitter.svg"
+              src="/src/assets/images/twitter.svg"
               alt="Twitter icon"
             />
             <img
               className={styles.icon}
-              src="../src/assets/images/facebook.svg"
+              src="/src/assets/images/facebook.svg"
               alt="Facebook icon"
             />
           </div>
