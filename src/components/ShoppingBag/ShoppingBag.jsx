@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import styles from './ShoppingBagEmpty.module.css';
+import styles from './ShoppingBag.module.css';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
-const ShoppingBagEmpty = ({ numBagItems }) => (
+const ShoppingBag = ({ numBagItems }) => (
   <>
     <Header numBagItems={numBagItems} />
     <main className={styles.main}>
@@ -23,8 +23,8 @@ const ShoppingBagEmpty = ({ numBagItems }) => (
   </>
 );
 
-ShoppingBagEmpty.propTypes = {
+ShoppingBag.propTypes = {
   numBagItems: PropTypes.number.isRequired,
 };
 
-export default ShoppingBagEmpty;
+export default ShoppingBag;

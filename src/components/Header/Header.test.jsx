@@ -4,7 +4,7 @@ import { renderWithRouter, setRoutes } from '../../utils/test-utils';
 import Header from './Header';
 import HomePage from '../HomePage/HomePage';
 import AllProductsPage from '../AllProductsPage/AllProductsPage';
-import ShoppingBagEmpty from '../ShoppingBagEmpty/ShoppingBagEmpty';
+import ShoppingBag from '../ShoppingBag/ShoppingBag';
 
 describe('rendered elements of the header', () => {
   it('renders the logo', () => {
@@ -74,7 +74,7 @@ describe('navigation of links to correct route', () => {
 
   it('renders the empty shopping bag page when the nav link is clicked', async () => {
     renderWithRouter(
-      setRoutes('/', <HomePage />, '/bag', <ShoppingBagEmpty numBagItems={0} />)
+      setRoutes('/', <HomePage />, '/bag', <ShoppingBag numBagItems={0} />)
     );
     const link = screen.getByRole('link', { name: /bag/i });
     await userEvent.click(link);

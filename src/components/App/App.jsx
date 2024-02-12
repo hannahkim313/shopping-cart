@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import AllProductsPage from '../AllProductsPage/AllProductsPage';
-import ShoppingBagEmpty from '../ShoppingBagEmpty/ShoppingBagEmpty';
+import ShoppingBag from '../ShoppingBag/ShoppingBag';
 import HomePage from '../HomePage/HomePage';
 import './App.module.css';
 
@@ -42,7 +42,7 @@ const App = () => {
     },
     {
       path: 'bag',
-      element: <ShoppingBagEmpty numBagItems={bagItems.length} />,
+      element: <ShoppingBag numBagItems={bagItems.length} />,
     },
   ]);
 
