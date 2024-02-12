@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithRouter, setRoutes } from '../../utils/test-utils';
 import ErrorPage from './ErrorPage';
-import App from '../App/App';
+import HomePage from '../HomePage/HomePage';
 
 describe('rendered elements of the 404 error page', () => {
   it('renders the nav link that navigates to the home page', () => {
@@ -15,7 +15,7 @@ describe('rendered elements of the 404 error page', () => {
 
 describe('navigation of links to correct route', () => {
   it('renders the home page when the nav link is clicked', async () => {
-    renderWithRouter(setRoutes('/error', <ErrorPage />, '/', <App />), {
+    renderWithRouter(setRoutes('/error', <ErrorPage />, '/', <HomePage />), {
       route: '/error',
     });
     const link = screen.getByRole('link', { name: /home/i });

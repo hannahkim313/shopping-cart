@@ -11,6 +11,8 @@ import ProductPage from '../ProductPage/ProductPage';
 
 global.fetch = vi.fn();
 
+const mockHandleAddToBag = vi.fn();
+
 const mockData = [
   {
     category: 'test',
@@ -66,7 +68,11 @@ describe('AllProductsPage component with mocked products', () => {
       renderWithRouter(
         setRoutes(
           'test/products?/:productId?',
-          <AllProductsPage category="test" />,
+          <AllProductsPage
+            numBagItems={0}
+            handleAddToBag={mockHandleAddToBag}
+            category="test"
+          />,
           'products?/:productId?',
           <ProductPage data={mockData[0]} />
         ),
@@ -88,7 +94,13 @@ describe('AllProductsPage component with mocked products', () => {
         }),
       }));
 
-      renderWithRouter(<AllProductsPage category="test" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="test"
+        />
+      );
 
       await waitFor(() => {
         expect(
@@ -100,7 +112,13 @@ describe('AllProductsPage component with mocked products', () => {
 
   describe('rendering of component with different prop values', () => {
     it('renders the men shopping page with the correct title', async () => {
-      renderWithRouter(<AllProductsPage category="men's clothing" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="men's clothing"
+        />
+      );
 
       await waitFor(() => {
         expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
@@ -110,7 +128,13 @@ describe('AllProductsPage component with mocked products', () => {
     });
 
     it('renders a given shopping page with the correct title', async () => {
-      renderWithRouter(<AllProductsPage category="example" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="example"
+        />
+      );
 
       await waitFor(() => {
         expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
@@ -123,7 +147,13 @@ describe('AllProductsPage component with mocked products', () => {
   describe('rendering of messages', () => {
     it('renders a loading message when "loading" is true and disappears when false', async () => {
       fetch.mockResolvedValue(createFetchResponse({ loading: true }));
-      renderWithRouter(<AllProductsPage category="test" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="test"
+        />
+      );
 
       await waitFor(() => {
         expect(screen.getByText(/loading/i)).toBeInTheDocument();
@@ -135,7 +165,13 @@ describe('AllProductsPage component with mocked products', () => {
 
     it('renders an "oops" message when "errorState" is not null', async () => {
       fetch.mockRejectedValue(createFetchResponse({ errorState: new Error() }));
-      renderWithRouter(<AllProductsPage category="test" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="test"
+        />
+      );
 
       await waitFor(() => {
         expect(screen.getByText(/oops/i)).toBeInTheDocument();
@@ -145,7 +181,13 @@ describe('AllProductsPage component with mocked products', () => {
 
   describe('rendering of product cards', () => {
     it('renders all product cards', async () => {
-      renderWithRouter(<AllProductsPage category="test" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="test"
+        />
+      );
 
       await waitFor(() => {
         expect(screen.getAllByRole('article')).toHaveLength(4);
@@ -153,7 +195,13 @@ describe('AllProductsPage component with mocked products', () => {
     });
 
     it('renders the name of the products', async () => {
-      renderWithRouter(<AllProductsPage category="test" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="test"
+        />
+      );
 
       await waitFor(() => {
         expect(screen.getByText('Product 1')).toBeInTheDocument();
@@ -162,7 +210,13 @@ describe('AllProductsPage component with mocked products', () => {
     });
 
     it('renders the price of the products', async () => {
-      renderWithRouter(<AllProductsPage category="test" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="test"
+        />
+      );
 
       await waitFor(() => {
         expect(screen.getByText('$10.99')).toBeInTheDocument();
@@ -171,7 +225,13 @@ describe('AllProductsPage component with mocked products', () => {
     });
 
     it('renders the image of the products', async () => {
-      renderWithRouter(<AllProductsPage category="test" />);
+      renderWithRouter(
+        <AllProductsPage
+          numBagItems={0}
+          handleAddToBag={mockHandleAddToBag}
+          category="test"
+        />
+      );
 
       await waitFor(() => {
         expect(screen.getAllByRole('link')).toHaveLength(9);
@@ -191,7 +251,11 @@ describe('AllProductsPage component with mocked products', () => {
       renderWithRouter(
         setRoutes(
           '/test',
-          <AllProductsPage category="test" />,
+          <AllProductsPage
+            numBagItems={0}
+            handleAddToBag={mockHandleAddToBag}
+            category="test"
+          />,
           '/products?/:productId?',
           <ProductPage data={mockData[0]} />
         ),

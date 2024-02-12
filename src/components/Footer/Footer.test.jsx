@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { renderWithRouter, setRoutes } from '../../utils/test-utils';
 import AllProductsPage from '../AllProductsPage/AllProductsPage';
 import Footer from './Footer';
-import App from '../App/App';
+import HomePage from '../HomePage/HomePage';
 
 describe('rendered elements of the footer from the default home page', () => {
   it('renders the "Men" nav link', () => {
@@ -29,7 +29,7 @@ describe('navigation of links to correct route', () => {
     renderWithRouter(
       setRoutes(
         '/',
-        <App />,
+        <HomePage />,
         '/men',
         <AllProductsPage category="men's clothing" />
       )
@@ -46,7 +46,7 @@ describe('navigation of links to correct route', () => {
     renderWithRouter(
       setRoutes(
         '/',
-        <App />,
+        <HomePage />,
         '/women',
         <AllProductsPage category="women's clothing" />
       )

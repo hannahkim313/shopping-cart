@@ -6,12 +6,12 @@ import AllProductsPage from '../AllProductsPage/AllProductsPage';
 
 describe('rendered elements of the empty shopping bag page', () => {
   it('renders the "SHOP MEN" nav link', () => {
-    renderWithRouter(<ShoppingBagEmpty />, { route: '/bag' });
+    renderWithRouter(<ShoppingBagEmpty numBagItems={0} />, { route: '/bag' });
     expect(screen.getByRole('link', { name: 'SHOP MEN' })).toBeInTheDocument();
   });
 
   it('renders the "SHOP WOMEN" nav link', () => {
-    renderWithRouter(<ShoppingBagEmpty />, { route: '/bag' });
+    renderWithRouter(<ShoppingBagEmpty numBagItems={0} />, { route: '/bag' });
     expect(
       screen.getByRole('link', { name: 'SHOP WOMEN' })
     ).toBeInTheDocument();
@@ -23,7 +23,7 @@ describe('navigation of links to correct route', () => {
     renderWithRouter(
       setRoutes(
         '/bag',
-        <ShoppingBagEmpty />,
+        <ShoppingBagEmpty numBagItems={0} />,
         '/men',
         <AllProductsPage category="men's clothing" />
       ),
@@ -40,7 +40,7 @@ describe('navigation of links to correct route', () => {
     renderWithRouter(
       setRoutes(
         '/bag',
-        <ShoppingBagEmpty />,
+        <ShoppingBagEmpty numBagItems={0} />,
         '/women',
         <AllProductsPage category="women's clothing" />
       ),

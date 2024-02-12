@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
-import { beforeEach } from 'vitest';
+import { afterEach, beforeEach, vi } from 'vitest';
+import userEvent from '@testing-library/user-event';
 import { renderWithRouter } from '../../utils/test-utils';
 import ProductPage from './ProductPage';
 
@@ -16,10 +17,22 @@ const mockData = {
   description: 'sample description',
 };
 
-describe('ProductPage component', () => {
-  describe('rendering of elements', () => {
-    beforeEach(() => renderWithRouter(<ProductPage data={mockData} />));
+const mockHandleAddToBag = vi.fn();
 
+describe('ProductPage component', () => {
+  beforeEach(() =>
+    renderWithRouter(
+      <ProductPage
+        data={mockData}
+        numBagItems={0}
+        handleAddToBag={mockHandleAddToBag}
+      />
+    )
+  );
+
+  afterEach(() => vi.restoreAllMocks());
+
+  describe('rendering of elements', () => {
     it('renders the product image', () => {
       const productImg = screen.getAllByRole('img')[4];
       expect(productImg).toHaveAttribute('src', mockData.image);
@@ -64,7 +77,11 @@ describe('ProductPage component', () => {
     });
   });
 
-  describe('functionality of "add to bag" button', () => {
-    // write tests
+  describe('onClick handling of "add to bag" button', () => {
+    it('calls handleAddToBag() callback on click', async () => {
+      const addToBagBtn = screen.getByRole('button', { name: /add to bag/i });
+      await userEvent.click(addToBagBtn);
+      expect(mockHandleAddToBag).toHaveBeenCalledWith(mockData);
+    });
   });
 });

@@ -55,6 +55,7 @@ header button {
 
 .navLinksPages a:has(img) {
   flex-shrink: 0;
+  position: relative;
 }
 
 .logo {
@@ -68,4 +69,24 @@ header button {
 
 .icon:hover {
   background-color: var(--color-neutral-2);
+}
+
+.bag {
+  position: relative;
+}
+
+.bagCount {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--color-text-inverted);
+  font-size: 0.7rem;
+  background-color: var(--color-text);
+  border-radius: var(--border-radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(10%, 5%);
 }

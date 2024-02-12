@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css';
 import Banner from '../Banner/Banner';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const HomePage = () => (
+const HomePage = ({ numBagItems }) => (
   <>
-    <Header />
+    <Header numBagItems={numBagItems} />
     <main className={styles.main}>
       <h1 className={styles.hidden}>Urban Thread home page</h1>
       <Banner />
@@ -99,5 +100,9 @@ const HomePage = () => (
     <Footer />
   </>
 );
+
+HomePage.propTypes = {
+  numBagItems: PropTypes.number.isRequired,
+};
 
 export default HomePage;

@@ -9,18 +9,24 @@ import styles from './AllProductsPage.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-const AllProductsPage = ({ category }) => {
+const AllProductsPage = ({ category, numBagItems, handleAddToBag }) => {
   const url = 'https://fakestoreapi.com/products';
   const { data, loading, errorState } = useFetchAPI(url);
   const { productId } = useParams();
 
   if (data.length > 0 && productId) {
-    return <ProductPage data={data[productId - 1]} />;
+    return (
+      <ProductPage
+        data={data[productId - 1]}
+        numBagItems={numBagItems}
+        handleAddToBag={handleAddToBag}
+      />
+    );
   }
 
   return (
     <>
-      <Header />
+      <Header numBagItems={numBagItems} />
       <main className={styles.main}>
         <h1>{capitalize(category)}</h1>
         <section className={styles.products}>
@@ -55,6 +61,8 @@ const AllProductsPage = ({ category }) => {
 
 AllProductsPage.propTypes = {
   category: PropTypes.string.isRequired,
+  numBagItems: PropTypes.number.isRequired,
+  handleAddToBag: PropTypes.func.isRequired,
 };
 
 export default AllProductsPage;

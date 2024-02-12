@@ -3,16 +3,15 @@ import { screen } from '@testing-library/react';
 import { renderWithRouter, setRoutes } from '../../utils/test-utils';
 import HomePage from './HomePage';
 import AllProductsPage from '../AllProductsPage/AllProductsPage';
-import App from '../App/App';
 
 describe('rendered elements of the home page', () => {
   it('renders the "SHOP MEN" nav link', () => {
-    renderWithRouter(<HomePage />);
+    renderWithRouter(<HomePage numBagItems={0} />);
     expect(screen.getByRole('link', { name: 'SHOP MEN' })).toBeInTheDocument();
   });
 
   it('renders the "SHOP WOMEN" nav link', () => {
-    renderWithRouter(<HomePage />);
+    renderWithRouter(<HomePage numBagItems={0} />);
     expect(
       screen.getByRole('link', { name: 'SHOP WOMEN' })
     ).toBeInTheDocument();
@@ -24,7 +23,7 @@ describe('navigation of links to correct route', () => {
     renderWithRouter(
       setRoutes(
         '/',
-        <App />,
+        <HomePage numBagItems={0} />,
         '/men',
         <AllProductsPage category="men's clothing" />
       )
@@ -40,7 +39,7 @@ describe('navigation of links to correct route', () => {
     renderWithRouter(
       setRoutes(
         '/',
-        <App />,
+        <HomePage numBagItems={0} />,
         '/women',
         <AllProductsPage category="women's clothing" />
       )

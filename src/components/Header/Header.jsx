@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
-const Header = () => (
+const Header = ({ numBagItems }) => (
   <header>
     <Link to="/">
       <img
@@ -41,15 +42,22 @@ const Header = () => (
           alt="My favorites"
         />
       </button>
-      <Link to="/bag">
-        <img
-          className={styles.icon}
-          src="/src/assets/images/shopping-bag.svg"
-          alt="My shopping bag"
-        />
-      </Link>
+      <div className={styles.bag}>
+        <Link to="/bag">
+          <img
+            className={styles.icon}
+            src="/src/assets/images/shopping-bag.svg"
+            alt="My shopping bag"
+          />
+        </Link>
+        {numBagItems > 0 && <p className={styles.bagCount}>{numBagItems}</p>}
+      </div>
     </div>
   </header>
 );
+
+Header.propTypes = {
+  numBagItems: PropTypes.number.isRequired,
+};
 
 export default Header;
