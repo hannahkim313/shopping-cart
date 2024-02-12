@@ -22,9 +22,9 @@ const ProductPage = ({ data, numBagItems, handleAddToBag }) => {
                 <StarRating rating={data.rating.rate} />
               </div>
               <h3 className={styles.hidden}>Number of reviews</h3>
-              <p>{`(${data.rating.count})`}</p>
+              <p>({data.rating.count})</p>
             </div>
-            <p className={styles.price}>{`$${data.price.toFixed(2)}`}</p>
+            <p className={styles.price}>${data.price.toFixed(2)}</p>
           </div>
           <div className={styles.divider} />
           <h2 className={styles.hidden}>Description</h2>
