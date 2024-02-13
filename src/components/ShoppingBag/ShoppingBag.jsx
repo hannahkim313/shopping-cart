@@ -21,6 +21,9 @@ const ShoppingBag = ({ bagItems }) => {
     </>
   );
 
+  const sum = (prices = []) =>
+    prices.length === 0 ? 0 : prices.reduce((a, b) => a + b).toFixed(2);
+
   const checkoutContent = (
     <div className={styles.checkoutContainer}>
       <div className={styles.products}>
@@ -77,8 +80,7 @@ const ShoppingBag = ({ bagItems }) => {
           <div className={styles.divider} />
           <div>
             <p>Subtotal</p>
-            {/* FIXME: Calculate subtotal */}
-            <p>$TEST</p>
+            <p>${sum(bagItems.map((data) => data.price))}</p>
           </div>
           <div>
             <p>Estimated Shipping & Handling</p>
@@ -91,8 +93,7 @@ const ShoppingBag = ({ bagItems }) => {
           <div className={styles.divider} />
           <div>
             <p>Total</p>
-            {/* FIXME: Calculate total */}
-            <p>$TEST</p>
+            <p>${sum(bagItems.map((data) => data.price))}</p>
           </div>
           <div className={styles.divider} />
         </article>
