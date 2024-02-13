@@ -11,7 +11,7 @@ const App = () => {
 
   const handleAddToBag = (data) => {
     setBagItems([...bagItems, data]);
-    // TODO: Update the shopping bag page to include products added to the bag using data and finish writing tests
+    // TODO: Prevent more than 10 quantities of a product from being added to the bag (add an error message?)
   };
 
   const router = createBrowserRouter([
@@ -42,7 +42,9 @@ const App = () => {
     },
     {
       path: 'bag',
-      element: <ShoppingBag numBagItems={bagItems.length} />,
+      element: (
+        <ShoppingBag numBagItems={bagItems.length} bagItems={bagItems} />
+      ),
     },
   ]);
 
