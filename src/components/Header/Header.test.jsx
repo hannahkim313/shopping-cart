@@ -74,7 +74,7 @@ describe('navigation of links to correct route', () => {
 
   it('renders the empty shopping bag page when the nav link is clicked', async () => {
     renderWithRouter(
-      setRoutes('/', <HomePage />, '/bag', <ShoppingBag numBagItems={0} />)
+      setRoutes('/', <HomePage />, '/bag', <ShoppingBag bagItems={[]} />)
     );
     const link = screen.getByRole('link', { name: /bag/i });
     await userEvent.click(link);
