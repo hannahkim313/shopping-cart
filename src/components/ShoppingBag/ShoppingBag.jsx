@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
+import { Fragment } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import styles from './ShoppingBag.module.css';
 
-const ShoppingBag = ({ numBagItems, bagItems }) => {
+const ShoppingBag = ({ bagItems }) => {
   const emptyContent = (
     <>
       <p>There are no items in your bag.</p>
@@ -25,8 +26,8 @@ const ShoppingBag = ({ numBagItems, bagItems }) => {
       <div className={styles.products}>
         {bagItems.map((data, index) => (
           // FIXME: If there are multiple quantities of the same product, map a single product card and increase the quantity by 1
-          <>
-            <article className={styles.productCard} key={uuidv4()}>
+          <Fragment key={uuidv4()}>
+            <article className={styles.productCard}>
               <img className={styles.image} src={data.image} alt="" />
               <div className={styles.info}>
                 <h2>{data.title}</h2>
@@ -60,14 +61,14 @@ const ShoppingBag = ({ numBagItems, bagItems }) => {
                   </button>
                 </div>
               </div>
-              <p className={styles.price}>${data.price}</p>
+              <p className={styles.price}>${data.price.toFixed(2)}</p>
             </article>
             {index < bagItems.length - 1 ? (
               <div className={styles.divider} />
             ) : (
               ''
             )}
-          </>
+          </Fragment>
         ))}
       </div>
       <div className={styles.summaryContainer}>
@@ -102,7 +103,7 @@ const ShoppingBag = ({ numBagItems, bagItems }) => {
 
   return (
     <>
-      <Header numBagItems={numBagItems} />
+      <Header numBagItems={bagItems.length} />
       <main className={styles.main}>
         <h1>Your Bag</h1>
         {bagItems.length === 0 ? emptyContent : checkoutContent}
@@ -113,7 +114,6 @@ const ShoppingBag = ({ numBagItems, bagItems }) => {
 };
 
 ShoppingBag.propTypes = {
-  numBagItems: PropTypes.number.isRequired,
   bagItems: PropTypes.oneOfType([PropTypes.array]).isRequired,
 };
 

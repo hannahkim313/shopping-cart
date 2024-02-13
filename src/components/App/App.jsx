@@ -42,9 +42,7 @@ const App = () => {
     },
     {
       path: 'bag',
-      element: (
-        <ShoppingBag numBagItems={bagItems.length} bagItems={bagItems} />
-      ),
+      element: <ShoppingBag bagItems={bagItems} />,
     },
   ]);
 
