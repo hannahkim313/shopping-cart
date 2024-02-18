@@ -24,7 +24,7 @@ const ShoppingBag = ({ bagItems }) => {
   const sum = (prices = []) =>
     prices.length === 0 ? 0 : prices.reduce((a, b) => a + b).toFixed(2);
 
-  const checkoutContent = (
+  const checkoutContent = () => (
     <div className={styles.checkoutContainer}>
       <div className={styles.products}>
         {bagItems.map((data, index) => (
@@ -39,7 +39,11 @@ const ShoppingBag = ({ bagItems }) => {
                   htmlFor={`product-quantity-${data.id}`}
                 >
                   Quantity
-                  <select name="quantity" id={`product-quantity-${data.id}`}>
+                  <select
+                    name="quantity"
+                    id={`product-quantity-${data.id}`}
+                    defaultValue={data.quantity}
+                  >
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -107,7 +111,7 @@ const ShoppingBag = ({ bagItems }) => {
       <Header numBagItems={bagItems.length} />
       <main className={styles.main}>
         <h1>Your Bag</h1>
-        {bagItems.length === 0 ? emptyContent : checkoutContent}
+        {bagItems.length === 0 ? emptyContent : checkoutContent()}
       </main>
       <Footer />
     </>

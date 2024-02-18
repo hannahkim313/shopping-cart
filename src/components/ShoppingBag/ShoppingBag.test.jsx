@@ -13,6 +13,7 @@ const mockData = [
     id: 1,
     title: 'Product 1',
     price: 10.99,
+    quantity: 2,
     image: 'product-1.jpg',
     rating: {
       rate: 5.0,
@@ -24,6 +25,7 @@ const mockData = [
     id: 2,
     title: 'Product 2',
     price: 15.99,
+    quantity: 1,
     image: 'product-2.jpg',
     rating: {
       rate: 3.0,
@@ -71,9 +73,9 @@ describe('ShoppingBag component', () => {
     });
 
     it('renders a product card with the correct quantity for multiple quantities of a product in the bag', () => {
-      // FIXME
       renderWithRouter(<ShoppingBag bagItems={mockData} />, { route: '/bag' });
-      expect(screen.getByRole('combobox')).toHaveValue('2');
+      expect(screen.getAllByRole('combobox')[0]).toHaveValue('2');
+      expect(screen.getAllByRole('combobox')[1]).toHaveValue('1');
     });
 
     it('renders the order summary with the correct subtotal and total', () => {
