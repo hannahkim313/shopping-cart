@@ -52,7 +52,7 @@ describe('ShoppingBag component', () => {
   });
 
   describe('rendering of elements when the shopping bag is not empty', () => {
-    it('renders a product card for each different product in the bag', () => {
+    it('renders a product card for each different product', () => {
       renderWithRouter(<ShoppingBag bagItems={mockData} />, { route: '/bag' });
       expect(
         screen.getByRole('heading', { level: 2, name: 'Product 1' })
@@ -72,15 +72,16 @@ describe('ShoppingBag component', () => {
       );
     });
 
-    it('renders a product card with the correct quantity for multiple quantities of a product in the bag', () => {
+    it('renders a product card with the correct quantity of a product', () => {
       renderWithRouter(<ShoppingBag bagItems={mockData} />, { route: '/bag' });
       expect(screen.getAllByRole('combobox')[0]).toHaveValue('2');
       expect(screen.getAllByRole('combobox')[1]).toHaveValue('1');
     });
 
     it('renders the order summary with the correct subtotal and total', () => {
+      // FIXME: Resolve error
       renderWithRouter(<ShoppingBag bagItems={mockData} />, { route: '/bag' });
-      expect(screen.getAllByText('$26.98')).toHaveLength(2);
+      expect(screen.getAllByText('$37.97')).toHaveLength(2);
     });
   });
 

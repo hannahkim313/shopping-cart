@@ -28,6 +28,10 @@ describe('rendered elements of the header', () => {
       screen.getByRole('img', { name: 'My shopping bag' })
     ).toBeInTheDocument();
   });
+
+  it('renders the correct number of items in the bag', () => {
+    // TODO: Write test
+  });
 });
 
 describe('navigation of links to correct route', () => {
