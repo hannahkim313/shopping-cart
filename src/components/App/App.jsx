@@ -1,5 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import ErrorPage from '../ErrorPage/ErrorPage';
 import AllProductsPage from '../AllProductsPage/AllProductsPage';
 import ShoppingBag from '../ShoppingBag/ShoppingBag';
@@ -28,18 +30,24 @@ const App = () => {
     }
   };
 
+  const numBagItems = bagItems.reduce(
+    (accumulator, item) => accumulator + item.quantity,
+    0
+  );
+
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage numBagItems={bagItems.length} />,
+      element: <HomePage numBagItems={numBagItems} />,
       errorElement: <ErrorPage />,
     },
     {
       path: 'men/products?/:productId?',
       element: (
         <AllProductsPage
+          key={uuidv4()}
           category="men's clothing"
-          numBagItems={bagItems.length}
+          numBagItems={numBagItems}
           handleAddToBag={handleAddToBag}
         />
       ),
@@ -48,15 +56,16 @@ const App = () => {
       path: 'women/products?/:productId?',
       element: (
         <AllProductsPage
+          key={uuidv4()}
           category="women's clothing"
-          numBagItems={bagItems.length}
+          numBagItems={numBagItems}
           handleAddToBag={handleAddToBag}
         />
       ),
     },
     {
       path: 'bag',
-      element: <ShoppingBag bagItems={bagItems} />,
+      element: <ShoppingBag bagItems={bagItems} numBagItems={numBagItems} />,
     },
   ]);
 

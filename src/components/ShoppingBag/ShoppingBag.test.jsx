@@ -37,14 +37,18 @@ const mockData = [
 describe('ShoppingBag component', () => {
   describe('rendering of elements when the shopping bag is empty', () => {
     it('renders the "SHOP MEN" nav link', () => {
-      renderWithRouter(<ShoppingBag bagItems={[]} />, { route: '/bag' });
+      renderWithRouter(<ShoppingBag bagItems={[]} numBagItems={0} />, {
+        route: '/bag',
+      });
       expect(
         screen.getByRole('link', { name: 'SHOP MEN' })
       ).toBeInTheDocument();
     });
 
     it('renders the "SHOP WOMEN" nav link', () => {
-      renderWithRouter(<ShoppingBag bagItems={[]} />, { route: '/bag' });
+      renderWithRouter(<ShoppingBag bagItems={[]} numBagItems={0} />, {
+        route: '/bag',
+      });
       expect(
         screen.getByRole('link', { name: 'SHOP WOMEN' })
       ).toBeInTheDocument();
@@ -53,7 +57,9 @@ describe('ShoppingBag component', () => {
 
   describe('rendering of elements when the shopping bag is not empty', () => {
     it('renders a product card for each different product', () => {
-      renderWithRouter(<ShoppingBag bagItems={mockData} />, { route: '/bag' });
+      renderWithRouter(<ShoppingBag bagItems={mockData} numBagItems={3} />, {
+        route: '/bag',
+      });
       expect(
         screen.getByRole('heading', { level: 2, name: 'Product 1' })
       ).toBeInTheDocument();
@@ -73,14 +79,18 @@ describe('ShoppingBag component', () => {
     });
 
     it('renders a product card with the correct quantity of a product', () => {
-      renderWithRouter(<ShoppingBag bagItems={mockData} />, { route: '/bag' });
+      renderWithRouter(<ShoppingBag bagItems={mockData} numBagItems={3} />, {
+        route: '/bag',
+      });
       expect(screen.getAllByRole('combobox')[0]).toHaveValue('2');
       expect(screen.getAllByRole('combobox')[1]).toHaveValue('1');
     });
 
     it('renders the order summary with the correct subtotal and total', () => {
       // FIXME: Resolve error
-      renderWithRouter(<ShoppingBag bagItems={mockData} />, { route: '/bag' });
+      renderWithRouter(<ShoppingBag bagItems={mockData} numBagItems={3} />, {
+        route: '/bag',
+      });
       expect(screen.getAllByText('$37.97')).toHaveLength(2);
     });
   });
@@ -100,7 +110,7 @@ describe('ShoppingBag component', () => {
       renderWithRouter(
         setRoutes(
           '/bag',
-          <ShoppingBag bagItems={[]} />,
+          <ShoppingBag bagItems={[]} numBagItems={0} />,
           '/men',
           <AllProductsPage
             category="men's clothing"
@@ -121,7 +131,7 @@ describe('ShoppingBag component', () => {
       renderWithRouter(
         setRoutes(
           '/bag',
-          <ShoppingBag bagItems={[]} />,
+          <ShoppingBag bagItems={[]} numBagItems={0} />,
           '/women',
           <AllProductsPage
             category="women's clothing"

@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import styles from './ShoppingBag.module.css';
 
-const ShoppingBag = ({ bagItems }) => {
+const ShoppingBag = ({ bagItems, numBagItems }) => {
   const emptyContent = (
     <>
       <p>There are no items in your bag.</p>
@@ -28,7 +28,6 @@ const ShoppingBag = ({ bagItems }) => {
     <div className={styles.checkoutContainer}>
       <div className={styles.products}>
         {bagItems.map((data, index) => (
-          // FIXME: If there are multiple quantities of the same product, map a single product card and increase the quantity by 1
           <Fragment key={uuidv4()}>
             <article className={styles.productCard}>
               <img className={styles.image} src={data.image} alt="" />
@@ -70,11 +69,7 @@ const ShoppingBag = ({ bagItems }) => {
               </div>
               <p className={styles.price}>${data.price.toFixed(2)}</p>
             </article>
-            {index < bagItems.length - 1 ? (
-              <div className={styles.divider} />
-            ) : (
-              ''
-            )}
+            {index < numBagItems - 1 ? <div className={styles.divider} /> : ''}
           </Fragment>
         ))}
       </div>
@@ -108,10 +103,10 @@ const ShoppingBag = ({ bagItems }) => {
 
   return (
     <>
-      <Header numBagItems={bagItems.length} />
+      <Header numBagItems={numBagItems} />
       <main className={styles.main}>
         <h1>Your Bag</h1>
-        {bagItems.length === 0 ? emptyContent : checkoutContent()}
+        {numBagItems === 0 ? emptyContent : checkoutContent()}
       </main>
       <Footer />
     </>
@@ -120,6 +115,7 @@ const ShoppingBag = ({ bagItems }) => {
 
 ShoppingBag.propTypes = {
   bagItems: PropTypes.oneOfType([PropTypes.array]).isRequired,
+  numBagItems: PropTypes.number.isRequired,
 };
 
 export default ShoppingBag;

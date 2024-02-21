@@ -30,7 +30,8 @@ describe('rendered elements of the header', () => {
   });
 
   it('renders the correct number of items in the bag', () => {
-    // TODO: Write test
+    renderWithRouter(<Header numBagItems={2} />);
+    expect(screen.getByText('2')).toBeInTheDocument();
   });
 });
 
