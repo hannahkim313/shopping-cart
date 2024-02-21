@@ -1,11 +1,5 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-
-import ErrorPage from '../ErrorPage/ErrorPage';
-import AllProductsPage from '../AllProductsPage/AllProductsPage';
-import ShoppingBag from '../ShoppingBag/ShoppingBag';
-import HomePage from '../HomePage/HomePage';
+import Router from '../Router/Router';
 import './App.module.css';
 
 const App = () => {
@@ -35,41 +29,13 @@ const App = () => {
     0
   );
 
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <HomePage numBagItems={numBagItems} />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: 'men/products?/:productId?',
-      element: (
-        <AllProductsPage
-          key={uuidv4()}
-          category="men's clothing"
-          numBagItems={numBagItems}
-          handleAddToBag={handleAddToBag}
-        />
-      ),
-    },
-    {
-      path: 'women/products?/:productId?',
-      element: (
-        <AllProductsPage
-          key={uuidv4()}
-          category="women's clothing"
-          numBagItems={numBagItems}
-          handleAddToBag={handleAddToBag}
-        />
-      ),
-    },
-    {
-      path: 'bag',
-      element: <ShoppingBag bagItems={bagItems} numBagItems={numBagItems} />,
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
+  return (
+    <Router
+      bagItems={bagItems}
+      numBagItems={numBagItems}
+      handleAddToBag={handleAddToBag}
+    />
+  );
 };
 
 export default App;
