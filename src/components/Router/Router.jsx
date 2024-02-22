@@ -6,7 +6,7 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import AllProductsPage from '../AllProductsPage/AllProductsPage';
 import ShoppingBag from '../ShoppingBag/ShoppingBag';
 
-const Router = ({ bagItems, numBagItems, handleAddToBag }) => {
+const Router = ({ bagItems, numBagItems, isMaxQuantity, handleAddToBag }) => {
   const router = createBrowserRouter([
     {
       path: '/',
@@ -20,6 +20,7 @@ const Router = ({ bagItems, numBagItems, handleAddToBag }) => {
           key={uuidv4()}
           category="men's clothing"
           numBagItems={numBagItems}
+          isMaxQuantity={isMaxQuantity}
           handleAddToBag={handleAddToBag}
         />
       ),
@@ -31,6 +32,7 @@ const Router = ({ bagItems, numBagItems, handleAddToBag }) => {
           key={uuidv4()}
           category="women's clothing"
           numBagItems={numBagItems}
+          isMaxQuantity={isMaxQuantity}
           handleAddToBag={handleAddToBag}
         />
       ),
@@ -47,6 +49,8 @@ const Router = ({ bagItems, numBagItems, handleAddToBag }) => {
 Router.propTypes = {
   bagItems: PropTypes.oneOfType([PropTypes.array.isRequired]).isRequired,
   numBagItems: PropTypes.number.isRequired,
+  isMaxQuantity: PropTypes.oneOfType([PropTypes.func, PropTypes.bool])
+    .isRequired,
   handleAddToBag: PropTypes.func.isRequired,
 };
 

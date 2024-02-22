@@ -6,13 +6,13 @@ const App = () => {
   const [bagItems, setBagItems] = useState([]);
 
   const handleAddToBag = (data) => {
-    // TODO: Prevent more than 10 quantities of a product from being added to the bag (add an error message?)
+    // FIXME: Prevent API call every time a product is added to the bag
 
     const newItem = data;
     newItem.quantity = 1;
 
     const duplicateItemIndex = bagItems.findIndex(
-      (currItem) => currItem.id === newItem.id
+      (item) => item.id === newItem.id
     );
 
     if (duplicateItemIndex > -1) {
@@ -29,10 +29,17 @@ const App = () => {
     0
   );
 
+  const isMaxQuantity = (id) => {
+    const product = bagItems.find((item) => item.id === id);
+
+    return !product ? false : product.quantity === 10;
+  };
+
   return (
     <Router
       bagItems={bagItems}
       numBagItems={numBagItems}
+      isMaxQuantity={isMaxQuantity}
       handleAddToBag={handleAddToBag}
     />
   );

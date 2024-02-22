@@ -50,6 +50,12 @@
   background-color: var(--color-text);
 }
 
+.quantityError {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-brand-4);
+}
+
 .buttons {
   display: flex;
   flex-direction: column;
@@ -70,6 +76,16 @@
 
 .buttons .add:hover {
   background-color: var(--color-neutral-4);
+  border-color: var(--color-neutral-4);
+}
+
+.buttons .add:disabled {
+  background-color: var(--color-neutral-4);
+  border: 2px solid var(--color-neutral-4);
+}
+
+.buttons .add:disabled:hover {
+  cursor: not-allowed;
 }
 
 .buttons .favorite {

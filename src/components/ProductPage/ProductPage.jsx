@@ -4,7 +4,13 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import StarRating from '../StarRating/StarRating';
 
-const ProductPage = ({ data, numBagItems, handleAddToBag }) => {
+const ProductPage = ({
+  data,
+  numBagItems,
+  isMaxQuantity,
+  id,
+  handleAddToBag,
+}) => {
   const sendProductData = () => handleAddToBag(data);
 
   return (
@@ -30,9 +36,15 @@ const ProductPage = ({ data, numBagItems, handleAddToBag }) => {
           <h2 className={styles.hidden}>Description</h2>
           <p className={styles.productDescription}>{data.description}</p>
           <div className={styles.buttons}>
+            {isMaxQuantity(id) && (
+              <p className={styles.quantityError}>
+                You have reached the quantity limit.
+              </p>
+            )}
             <button
               className={styles.add}
               type="button"
+              disabled={isMaxQuantity(id)}
               onClick={sendProductData}
             >
               Add to bag
@@ -52,6 +64,9 @@ const ProductPage = ({ data, numBagItems, handleAddToBag }) => {
 ProductPage.propTypes = {
   data: PropTypes.oneOfType([PropTypes.object]).isRequired,
   numBagItems: PropTypes.number.isRequired,
+  isMaxQuantity: PropTypes.oneOfType([PropTypes.func, PropTypes.bool])
+    .isRequired,
+  id: PropTypes.number.isRequired,
   handleAddToBag: PropTypes.func.isRequired,
 };
 
