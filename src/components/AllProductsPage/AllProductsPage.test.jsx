@@ -12,6 +12,7 @@ import ProductPage from '../ProductPage/ProductPage';
 global.fetch = vi.fn();
 
 const mockHandleAddToBag = vi.fn();
+const mockIsMaxQuantity = vi.fn();
 
 const mockData = [
   {
@@ -24,6 +25,7 @@ const mockData = [
       rate: 5.0,
       count: 120,
     },
+    quantity: 1,
   },
   {
     category: 'test',
@@ -35,6 +37,7 @@ const mockData = [
       rate: 3.0,
       count: 110,
     },
+    quantity: 2,
   },
 ];
 
@@ -71,10 +74,17 @@ describe('AllProductsPage component with mocked products', () => {
           <AllProductsPage
             numBagItems={0}
             handleAddToBag={mockHandleAddToBag}
+            isMaxQuantity={mockIsMaxQuantity}
             category="test"
           />,
           'products?/:productId?',
-          <ProductPage data={mockData[0]} />
+          <ProductPage
+            data={mockData[0]}
+            numBagItems={3}
+            isMaxQuantity={mockIsMaxQuantity}
+            id={1}
+            handleAddToBag={mockHandleAddToBag}
+          />
         ),
         { route: '/products/1' }
       );
@@ -98,6 +108,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="test"
         />
       );
@@ -116,6 +127,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="men's clothing"
         />
       );
@@ -132,6 +144,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="example"
         />
       );
@@ -151,6 +164,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="test"
         />
       );
@@ -169,6 +183,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="test"
         />
       );
@@ -185,6 +200,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="test"
         />
       );
@@ -199,6 +215,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="test"
         />
       );
@@ -214,6 +231,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="test"
         />
       );
@@ -229,6 +247,7 @@ describe('AllProductsPage component with mocked products', () => {
         <AllProductsPage
           numBagItems={0}
           handleAddToBag={mockHandleAddToBag}
+          isMaxQuantity={mockIsMaxQuantity}
           category="test"
         />
       );
@@ -254,10 +273,17 @@ describe('AllProductsPage component with mocked products', () => {
           <AllProductsPage
             numBagItems={0}
             handleAddToBag={mockHandleAddToBag}
+            isMaxQuantity={mockIsMaxQuantity}
             category="test"
           />,
           '/products?/:productId?',
-          <ProductPage data={mockData[0]} />
+          <ProductPage
+            data={mockData[0]}
+            numBagItems={3}
+            isMaxQuantity={mockIsMaxQuantity}
+            id={1}
+            handleAddToBag={mockHandleAddToBag}
+          />
         ),
         { route: '/test' }
       );
