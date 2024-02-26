@@ -123,6 +123,8 @@ describe('ProductPage component', () => {
 
   describe('onClick handling of "add to bag" button', () => {
     it('calls handleAddToBag() callback on click', async () => {
+      const user = userEvent.setup();
+
       renderWithRouter(
         <ProductPage
           data={mockData[0]}
@@ -134,7 +136,7 @@ describe('ProductPage component', () => {
       );
 
       const addToBagBtn = screen.getByRole('button', { name: /add to bag/i });
-      await userEvent.click(addToBagBtn);
+      await user.click(addToBagBtn);
       expect(mockHandleAddToBag).toHaveBeenCalledWith(mockData[0]);
 
       vi.restoreAllMocks();

@@ -29,6 +29,8 @@ describe('rendered elements of the footer from the default home page', () => {
 
 describe('navigation of links to correct route', () => {
   it('renders the men shopping page when the nav link is clicked', async () => {
+    const user = userEvent.setup();
+
     renderWithRouter(
       setRoutes(
         '/',
@@ -40,7 +42,7 @@ describe('navigation of links to correct route', () => {
 
     const links = screen.getAllByRole('link', { name: 'Men' });
     const link = links[links.length - 1];
-    await userEvent.click(link);
+    await user.click(link);
 
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Men'
@@ -48,6 +50,8 @@ describe('navigation of links to correct route', () => {
   });
 
   it('renders the women shopping page when the nav link is clicked', async () => {
+    const user = userEvent.setup();
+
     renderWithRouter(
       setRoutes(
         '/',
@@ -59,7 +63,7 @@ describe('navigation of links to correct route', () => {
 
     const links = screen.getAllByRole('link', { name: 'Women' });
     const link = links[links.length - 1];
-    await userEvent.click(link);
+    await user.click(link);
 
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Women'

@@ -113,6 +113,8 @@ describe('ShoppingBag component', () => {
 
   describe('navigation of links to correct route', () => {
     it('renders the men shopping page when the nav link is clicked', async () => {
+      const user = userEvent.setup();
+
       renderWithRouter(
         setRoutes(
           '/bag',
@@ -129,7 +131,7 @@ describe('ShoppingBag component', () => {
       );
 
       const link = screen.getByRole('link', { name: 'SHOP MEN' });
-      await userEvent.click(link);
+      await user.click(link);
 
       expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
         'Men'
@@ -137,6 +139,8 @@ describe('ShoppingBag component', () => {
     });
 
     it('renders the women shopping page when the nav link is clicked', async () => {
+      const user = userEvent.setup();
+
       renderWithRouter(
         setRoutes(
           '/bag',
@@ -153,7 +157,7 @@ describe('ShoppingBag component', () => {
       );
 
       const link = screen.getByRole('link', { name: 'SHOP WOMEN' });
-      await userEvent.click(link);
+      await user.click(link);
 
       expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
         'Women'

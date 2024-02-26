@@ -16,12 +16,14 @@ describe('rendered elements of the 404 error page', () => {
 
 describe('navigation of links to correct route', () => {
   it('renders the home page when the nav link is clicked', async () => {
+    const user = userEvent.setup();
+
     renderWithRouter(setRoutes('/error', <ErrorPage />, '/', <HomePage />), {
       route: '/error',
     });
 
     const link = screen.getByRole('link', { name: /home/i });
-    await userEvent.click(link);
+    await user.click(link);
 
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       /home page/i

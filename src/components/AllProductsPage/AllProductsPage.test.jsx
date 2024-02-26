@@ -263,6 +263,8 @@ describe('AllProductsPage component with mocked products', () => {
 
   describe('navigation of routes', () => {
     it('renders the product page when the product card link is clicked', async () => {
+      const user = userEvent.setup();
+
       vi.mock('react-router-dom', async () => ({
         ...(await vi.importActual('react-router-dom')),
         useParams: () => ({
@@ -293,7 +295,7 @@ describe('AllProductsPage component with mocked products', () => {
 
       await waitFor(async () => {
         const link = screen.getAllByRole('link')[4];
-        await userEvent.click(link);
+        await user.click(link);
       });
 
       expect(

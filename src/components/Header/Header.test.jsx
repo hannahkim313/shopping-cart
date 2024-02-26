@@ -42,10 +42,12 @@ describe('rendered elements of the header', () => {
 
 describe('navigation of links to correct route', () => {
   it('renders the home page when the logo is clicked', async () => {
+    const user = userEvent.setup();
+
     renderWithRouter(setRoutes('/', <HomePage />, '/', <HomePage />));
 
     const link = screen.getByRole('link', { name: /home page/i });
-    await userEvent.click(link);
+    await user.click(link);
 
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       /home page/i
@@ -53,6 +55,8 @@ describe('navigation of links to correct route', () => {
   });
 
   it('renders the men shopping page when the nav link is clicked', async () => {
+    const user = userEvent.setup();
+
     renderWithRouter(
       setRoutes(
         '/',
@@ -63,7 +67,7 @@ describe('navigation of links to correct route', () => {
     );
 
     const link = screen.getByRole('link', { name: 'SHOP MEN' });
-    await userEvent.click(link);
+    await user.click(link);
 
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Men'
@@ -71,6 +75,8 @@ describe('navigation of links to correct route', () => {
   });
 
   it('renders the women shopping page when the nav link is clicked', async () => {
+    const user = userEvent.setup();
+
     renderWithRouter(
       setRoutes(
         '/',
@@ -81,7 +87,7 @@ describe('navigation of links to correct route', () => {
     );
 
     const link = screen.getByRole('link', { name: 'SHOP WOMEN' });
-    await userEvent.click(link);
+    await user.click(link);
 
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Women'
@@ -89,12 +95,14 @@ describe('navigation of links to correct route', () => {
   });
 
   it('renders the empty shopping bag page when the nav link is clicked', async () => {
+    const user = userEvent.setup();
+
     renderWithRouter(
       setRoutes('/', <HomePage />, '/bag', <ShoppingBag bagItems={[]} />)
     );
 
     const link = screen.getByRole('link', { name: /bag/i });
-    await userEvent.click(link);
+    await user.click(link);
 
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       /bag/i
