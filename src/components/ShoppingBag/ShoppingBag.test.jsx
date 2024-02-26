@@ -42,6 +42,7 @@ describe('ShoppingBag component', () => {
       renderWithRouter(<ShoppingBag bagItems={[]} numBagItems={0} />, {
         route: '/bag',
       });
+
       expect(
         screen.getByRole('link', { name: 'SHOP MEN' })
       ).toBeInTheDocument();
@@ -51,6 +52,7 @@ describe('ShoppingBag component', () => {
       renderWithRouter(<ShoppingBag bagItems={[]} numBagItems={0} />, {
         route: '/bag',
       });
+
       expect(
         screen.getByRole('link', { name: 'SHOP WOMEN' })
       ).toBeInTheDocument();
@@ -62,6 +64,7 @@ describe('ShoppingBag component', () => {
       renderWithRouter(<ShoppingBag bagItems={mockData} numBagItems={3} />, {
         route: '/bag',
       });
+
       expect(
         screen.getByRole('heading', { level: 2, name: 'Product 1' })
       ).toBeInTheDocument();
@@ -84,6 +87,7 @@ describe('ShoppingBag component', () => {
       renderWithRouter(<ShoppingBag bagItems={mockData} numBagItems={3} />, {
         route: '/bag',
       });
+
       expect(screen.getAllByRole('combobox')[0]).toHaveValue('2');
       expect(screen.getAllByRole('combobox')[1]).toHaveValue('1');
     });
@@ -92,6 +96,7 @@ describe('ShoppingBag component', () => {
       renderWithRouter(<ShoppingBag bagItems={mockData} numBagItems={3} />, {
         route: '/bag',
       });
+
       expect(screen.getAllByText('$37.97')).toHaveLength(2);
     });
   });
@@ -122,8 +127,10 @@ describe('ShoppingBag component', () => {
         ),
         { route: '/bag' }
       );
+
       const link = screen.getByRole('link', { name: 'SHOP MEN' });
       await userEvent.click(link);
+
       expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
         'Men'
       );
@@ -144,8 +151,10 @@ describe('ShoppingBag component', () => {
         ),
         { route: '/bag' }
       );
+
       const link = screen.getByRole('link', { name: 'SHOP WOMEN' });
       await userEvent.click(link);
+
       expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
         'Women'
       );

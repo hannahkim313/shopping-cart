@@ -9,21 +9,25 @@ import ShoppingBag from '../ShoppingBag/ShoppingBag';
 describe('rendered elements of the header', () => {
   it('renders the logo', () => {
     renderWithRouter(<Header numBagItems={0} />);
+
     expect(screen.getByRole('img', { name: /home page/i })).toBeInTheDocument();
   });
 
   it('renders the "Men" nav link', () => {
     renderWithRouter(<Header numBagItems={0} />);
+
     expect(screen.getByRole('link', { name: 'Men' })).toBeInTheDocument();
   });
 
   it('renders the "Women" nav link', () => {
     renderWithRouter(<Header numBagItems={0} />);
+
     expect(screen.getByRole('link', { name: 'Women' })).toBeInTheDocument();
   });
 
   it('renders the shopping bag icon', () => {
     renderWithRouter(<Header numBagItems={0} />);
+
     expect(
       screen.getByRole('img', { name: 'My shopping bag' })
     ).toBeInTheDocument();
@@ -31,6 +35,7 @@ describe('rendered elements of the header', () => {
 
   it('renders the correct number of items in the bag', () => {
     renderWithRouter(<Header numBagItems={2} />);
+
     expect(screen.getByText('2')).toBeInTheDocument();
   });
 });
@@ -38,8 +43,10 @@ describe('rendered elements of the header', () => {
 describe('navigation of links to correct route', () => {
   it('renders the home page when the logo is clicked', async () => {
     renderWithRouter(setRoutes('/', <HomePage />, '/', <HomePage />));
+
     const link = screen.getByRole('link', { name: /home page/i });
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       /home page/i
     );
@@ -54,8 +61,10 @@ describe('navigation of links to correct route', () => {
         <AllProductsPage category="men's clothing" numBagItems={0} />
       )
     );
+
     const link = screen.getByRole('link', { name: 'SHOP MEN' });
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Men'
     );
@@ -70,8 +79,10 @@ describe('navigation of links to correct route', () => {
         <AllProductsPage category="women's clothing" numBagItems={0} />
       )
     );
+
     const link = screen.getByRole('link', { name: 'SHOP WOMEN' });
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Women'
     );
@@ -81,8 +92,10 @@ describe('navigation of links to correct route', () => {
     renderWithRouter(
       setRoutes('/', <HomePage />, '/bag', <ShoppingBag bagItems={[]} />)
     );
+
     const link = screen.getByRole('link', { name: /bag/i });
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       /bag/i
     );

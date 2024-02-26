@@ -12,6 +12,7 @@ import ProductPage from '../ProductPage/ProductPage';
 global.fetch = vi.fn();
 
 const mockHandleAddToBag = vi.fn();
+
 const mockIsMaxQuantity = vi.fn();
 
 const mockData = [
@@ -160,6 +161,7 @@ describe('AllProductsPage component with mocked products', () => {
   describe('rendering of messages', () => {
     it('renders a loading message when "loading" is true and disappears when false', async () => {
       fetch.mockResolvedValue(createFetchResponse({ loading: true }));
+
       renderWithRouter(
         <AllProductsPage
           numBagItems={0}
@@ -179,6 +181,7 @@ describe('AllProductsPage component with mocked products', () => {
 
     it('renders an "oops" message when "errorState" is not null', async () => {
       fetch.mockRejectedValue(createFetchResponse({ errorState: new Error() }));
+
       renderWithRouter(
         <AllProductsPage
           numBagItems={0}

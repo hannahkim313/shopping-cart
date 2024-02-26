@@ -8,16 +8,19 @@ import HomePage from '../HomePage/HomePage';
 describe('rendered elements of the footer from the default home page', () => {
   it('renders the "Men" nav link', () => {
     renderWithRouter(<Footer />);
+
     expect(screen.getByRole('link', { name: 'Men' })).toBeInTheDocument();
   });
 
   it('renders the "Women" nav link', () => {
     renderWithRouter(<Footer />);
+
     expect(screen.getByRole('link', { name: 'Women' })).toBeInTheDocument();
   });
 
   it('renders the "Made by" link to the GitHub repo with the correct link', () => {
     renderWithRouter(<Footer />);
+
     expect(
       screen.getByRole('link', { name: 'Made by Hannah Kim' })
     ).toHaveAttribute('href', 'https://github.com/hannahkim313/shopping-cart');
@@ -34,9 +37,11 @@ describe('navigation of links to correct route', () => {
         <AllProductsPage category="men's clothing" />
       )
     );
+
     const links = screen.getAllByRole('link', { name: 'Men' });
     const link = links[links.length - 1];
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Men'
     );
@@ -51,9 +56,11 @@ describe('navigation of links to correct route', () => {
         <AllProductsPage category="women's clothing" />
       )
     );
+
     const links = screen.getAllByRole('link', { name: 'Women' });
     const link = links[links.length - 1];
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Women'
     );

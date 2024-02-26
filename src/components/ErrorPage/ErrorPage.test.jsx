@@ -7,6 +7,7 @@ import HomePage from '../HomePage/HomePage';
 describe('rendered elements of the 404 error page', () => {
   it('renders the nav link that navigates to the home page', () => {
     renderWithRouter(<ErrorPage />, { route: '/error' });
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       /404/i
     );
@@ -18,8 +19,10 @@ describe('navigation of links to correct route', () => {
     renderWithRouter(setRoutes('/error', <ErrorPage />, '/', <HomePage />), {
       route: '/error',
     });
+
     const link = screen.getByRole('link', { name: /home/i });
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       /home page/i
     );

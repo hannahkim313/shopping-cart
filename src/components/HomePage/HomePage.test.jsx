@@ -7,11 +7,13 @@ import AllProductsPage from '../AllProductsPage/AllProductsPage';
 describe('rendered elements of the home page', () => {
   it('renders the "SHOP MEN" nav link', () => {
     renderWithRouter(<HomePage numBagItems={0} />);
+
     expect(screen.getByRole('link', { name: 'SHOP MEN' })).toBeInTheDocument();
   });
 
   it('renders the "SHOP WOMEN" nav link', () => {
     renderWithRouter(<HomePage numBagItems={0} />);
+
     expect(
       screen.getByRole('link', { name: 'SHOP WOMEN' })
     ).toBeInTheDocument();
@@ -28,8 +30,10 @@ describe('navigation of links to correct route', () => {
         <AllProductsPage category="men's clothing" />
       )
     );
+
     const link = screen.getByRole('link', { name: 'SHOP MEN' });
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Men'
     );
@@ -44,8 +48,10 @@ describe('navigation of links to correct route', () => {
         <AllProductsPage category="women's clothing" />
       )
     );
+
     const link = screen.getByRole('link', { name: 'SHOP WOMEN' });
     await userEvent.click(link);
+
     expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(
       'Women'
     );
