@@ -79,7 +79,7 @@ const ShoppingBag = ({ bagItems, numBagItems }) => {
           <div className={styles.divider} />
           <div>
             <p>Subtotal</p>
-            <p>${sum(bagItems.map((data) => data.price))}</p>
+            <p>${sum(bagItems.map((data) => data.price * data.quantity))}</p>
           </div>
           <div>
             <p>Estimated Shipping & Handling</p>
@@ -92,7 +92,7 @@ const ShoppingBag = ({ bagItems, numBagItems }) => {
           <div className={styles.divider} />
           <div>
             <p>Total</p>
-            <p>${sum(bagItems.map((data) => data.price))}</p>
+            <p>${sum(bagItems.map((data) => data.price * data.quantity))}</p>
           </div>
           <div className={styles.divider} />
         </article>

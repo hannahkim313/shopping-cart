@@ -7,6 +7,8 @@ import AllProductsPage from '../AllProductsPage/AllProductsPage';
 
 const mockHandleAddToBag = vi.fn();
 
+const mockIsMaxQuantity = vi.fn();
+
 const mockData = [
   {
     category: 'test',
@@ -87,7 +89,6 @@ describe('ShoppingBag component', () => {
     });
 
     it('renders the order summary with the correct subtotal and total', () => {
-      // FIXME: Resolve error
       renderWithRouter(<ShoppingBag bagItems={mockData} numBagItems={3} />, {
         route: '/bag',
       });
@@ -115,6 +116,7 @@ describe('ShoppingBag component', () => {
           <AllProductsPage
             category="men's clothing"
             numBagItems={0}
+            isMaxQuantity={mockIsMaxQuantity}
             handleAddToBag={mockHandleAddToBag}
           />
         ),
@@ -136,6 +138,7 @@ describe('ShoppingBag component', () => {
           <AllProductsPage
             category="women's clothing"
             numBagItems={0}
+            isMaxQuantity={mockIsMaxQuantity}
             handleAddToBag={mockHandleAddToBag}
           />
         ),
