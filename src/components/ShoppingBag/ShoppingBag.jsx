@@ -6,7 +6,12 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import styles from './ShoppingBag.module.css';
 
-const ShoppingBag = ({ bagItems, numBagItems }) => {
+const ShoppingBag = ({
+  bagItems,
+  numBagItems,
+  handleQuantityChange,
+  handleRemoveFromBag,
+}) => {
   const emptyContent = (
     <>
       <p>There are no items in your bag.</p>
@@ -42,6 +47,7 @@ const ShoppingBag = ({ bagItems, numBagItems }) => {
                     name="quantity"
                     id={`product-quantity-${data.id}`}
                     defaultValue={data.quantity}
+                    onChange={handleQuantityChange(data.id)}
                   >
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -62,7 +68,11 @@ const ShoppingBag = ({ bagItems, numBagItems }) => {
                       alt="Move to Favorites"
                     />
                   </button>
-                  <button type="button">
+                  <button
+                    type="button"
+                    aria-label="Remove"
+                    onClick={() => handleRemoveFromBag(data.id)}
+                  >
                     <img src="/src/assets/images/delete.svg" alt="Remove" />
                   </button>
                 </div>
@@ -116,6 +126,8 @@ const ShoppingBag = ({ bagItems, numBagItems }) => {
 ShoppingBag.propTypes = {
   bagItems: PropTypes.oneOfType([PropTypes.array]).isRequired,
   numBagItems: PropTypes.number.isRequired,
+  handleQuantityChange: PropTypes.func.isRequired,
+  handleRemoveFromBag: PropTypes.func.isRequired,
 };
 
 export default ShoppingBag;

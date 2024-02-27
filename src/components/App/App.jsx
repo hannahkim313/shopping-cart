@@ -24,6 +24,17 @@ const App = () => {
     }
   };
 
+  const handleQuantityChange = (id) => (e) => {
+    const newValue = Number(e.target.value);
+    const itemData = bagItems.find((item) => item.id === id);
+    itemData.quantity = newValue;
+    setBagItems([...bagItems]);
+  };
+
+  const handleRemoveFromBag = (id) => {
+    setBagItems([...bagItems.filter((item) => item.id !== id)]);
+  };
+
   const numBagItems = bagItems.reduce(
     (accumulator, item) => accumulator + item.quantity,
     0
@@ -41,6 +52,8 @@ const App = () => {
       numBagItems={numBagItems}
       isMaxQuantity={isMaxQuantity}
       handleAddToBag={handleAddToBag}
+      handleQuantityChange={handleQuantityChange}
+      handleRemoveFromBag={handleRemoveFromBag}
     />
   );
 };

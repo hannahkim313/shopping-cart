@@ -6,7 +6,14 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import AllProductsPage from '../AllProductsPage/AllProductsPage';
 import ShoppingBag from '../ShoppingBag/ShoppingBag';
 
-const Router = ({ bagItems, numBagItems, isMaxQuantity, handleAddToBag }) => {
+const Router = ({
+  bagItems,
+  numBagItems,
+  isMaxQuantity,
+  handleAddToBag,
+  handleQuantityChange,
+  handleRemoveFromBag,
+}) => {
   const router = createBrowserRouter([
     {
       path: '/',
@@ -39,7 +46,14 @@ const Router = ({ bagItems, numBagItems, isMaxQuantity, handleAddToBag }) => {
     },
     {
       path: 'bag',
-      element: <ShoppingBag bagItems={bagItems} numBagItems={numBagItems} />,
+      element: (
+        <ShoppingBag
+          bagItems={bagItems}
+          numBagItems={numBagItems}
+          handleQuantityChange={handleQuantityChange}
+          handleRemoveFromBag={handleRemoveFromBag}
+        />
+      ),
     },
   ]);
 
@@ -52,6 +66,8 @@ Router.propTypes = {
   isMaxQuantity: PropTypes.oneOfType([PropTypes.func, PropTypes.bool])
     .isRequired,
   handleAddToBag: PropTypes.func.isRequired,
+  handleQuantityChange: PropTypes.func.isRequired,
+  handleRemoveFromBag: PropTypes.func.isRequired,
 };
 
 export default Router;
