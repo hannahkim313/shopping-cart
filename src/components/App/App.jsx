@@ -6,8 +6,6 @@ const App = () => {
   const [bagItems, setBagItems] = useState([]);
 
   const handleAddToBag = (data) => {
-    // FIXME: Prevent API call every time a product is added to the bag
-
     const newItem = data;
     newItem.quantity = 1;
 
