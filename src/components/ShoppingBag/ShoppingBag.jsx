@@ -79,7 +79,11 @@ const ShoppingBag = ({
               </div>
               <p className={styles.price}>${data.price.toFixed(2)}</p>
             </article>
-            {index < numBagItems - 1 ? <div className={styles.divider} /> : ''}
+            {index < bagItems.length - 1 ? (
+              <div className={styles.divider} />
+            ) : (
+              ''
+            )}
           </Fragment>
         ))}
       </div>
