@@ -1,10 +1,14 @@
 import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
+import { vi } from 'vitest';
 import { renderWithRouter, setRoutes } from '../../utils/test-utils';
 import Header from './Header';
 import HomePage from '../HomePage/HomePage';
 import AllProductsPage from '../AllProductsPage/AllProductsPage';
 import ShoppingBag from '../ShoppingBag/ShoppingBag';
+
+const mockHandleQuantityChange = vi.fn();
+const mockHandleRemoveFromBag = vi.fn();
 
 describe('rendered elements of the header', () => {
   it('renders the logo', () => {
@@ -98,7 +102,17 @@ describe('navigation of links to correct route', () => {
     const user = userEvent.setup();
 
     renderWithRouter(
-      setRoutes('/', <HomePage />, '/bag', <ShoppingBag bagItems={[]} />)
+      setRoutes(
+        '/',
+        <HomePage />,
+        '/bag',
+        <ShoppingBag
+          bagItems={[]}
+          numBagItems={0}
+          handleQuantityChange={mockHandleQuantityChange}
+          handleRemoveFromBag={mockHandleRemoveFromBag}
+        />
+      )
     );
 
     const link = screen.getByRole('link', { name: /bag/i });
