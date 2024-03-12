@@ -40,12 +40,12 @@ const ShoppingBag = ({
                 <h2>{data.title}</h2>
                 <label
                   className={styles.quantity}
-                  htmlFor={`product-quantity-${data.id}`}
+                  htmlFor={`productQuantity-${data.id}`}
                 >
                   Quantity
                   <select
                     name="quantity"
-                    id={`product-quantity-${data.id}`}
+                    id={`productQuantity-${data.id}`}
                     defaultValue={data.quantity}
                     onChange={handleQuantityChange(data.id)}
                   >

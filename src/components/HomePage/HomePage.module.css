@@ -51,6 +51,11 @@
   background-color: var(--color-neutral-4);
 }
 
+.linkDark:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
+
 .story {
   padding: var(--padding-split-lg);
   background-color: var(--color-brand-1);

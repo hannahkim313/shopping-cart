@@ -33,6 +33,11 @@
   background-color: var(--color-neutral-4);
 }
 
+.linkDark:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
+}
+
 .divider {
   width: 100%;
   height: 1px;
@@ -115,6 +120,11 @@
 
 .summaryContainer button:hover {
   background-color: var(--color-neutral-4);
+}
+
+.summaryContainer button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 3px;
 }
 
 .summary {
