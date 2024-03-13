@@ -68,6 +68,13 @@
 .productCard .info {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  gap: var(--gap-lg);
+}
+
+.info .group {
+  width: 100%;
+  display: flex;
   flex-direction: column;
   gap: var(--gap-sm);
 }
@@ -136,4 +143,30 @@
 .summary div:not(.divider) {
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 950px) {
+  .checkoutContainer {
+    flex-direction: column;
+  }
+
+  .productCard .image {
+    width: 150px;
+    height: auto;
+  }
+
+  .summaryContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .productCard .image {
+    width: auto;
+    height: 150px;
+  }
+
+  .productCard .info {
+    flex-direction: column;
+  }
 }

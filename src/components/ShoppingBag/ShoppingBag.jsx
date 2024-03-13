@@ -37,47 +37,49 @@ const ShoppingBag = ({
             <article className={styles.productCard}>
               <img className={styles.image} src={data.image} alt="" />
               <div className={styles.info}>
-                <h2>{data.title}</h2>
-                <label
-                  className={styles.quantity}
-                  htmlFor={`productQuantity-${data.id}`}
-                >
-                  Quantity
-                  <select
-                    name="quantity"
-                    id={`productQuantity-${data.id}`}
-                    defaultValue={data.quantity}
-                    onChange={handleQuantityChange(data.id)}
+                <div className={styles.group}>
+                  <h2>{data.title}</h2>
+                  <label
+                    className={styles.quantity}
+                    htmlFor={`productQuantity-${data.id}`}
                   >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                  </select>
-                </label>
-                <div className={styles.buttons}>
-                  <button type="button">
-                    <img
-                      src="/src/assets/images/favorite.svg"
-                      alt="Move to Favorites"
-                    />
-                  </button>
-                  <button
-                    type="button"
-                    aria-label="Remove"
-                    onClick={() => handleRemoveFromBag(data.id)}
-                  >
-                    <img src="/src/assets/images/delete.svg" alt="Remove" />
-                  </button>
+                    Quantity
+                    <select
+                      name="quantity"
+                      id={`productQuantity-${data.id}`}
+                      defaultValue={data.quantity}
+                      onChange={handleQuantityChange(data.id)}
+                    >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </label>
+                  <div className={styles.buttons}>
+                    <button type="button">
+                      <img
+                        src="/src/assets/images/favorite.svg"
+                        alt="Move to Favorites"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      aria-label="Remove"
+                      onClick={() => handleRemoveFromBag(data.id)}
+                    >
+                      <img src="/src/assets/images/delete.svg" alt="Remove" />
+                    </button>
+                  </div>
                 </div>
+                <p className={styles.price}>${data.price.toFixed(2)}</p>
               </div>
-              <p className={styles.price}>${data.price.toFixed(2)}</p>
             </article>
             {index < bagItems.length - 1 ? (
               <div className={styles.divider} />
