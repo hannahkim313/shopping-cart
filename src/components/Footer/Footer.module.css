@@ -8,6 +8,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--gap-med);
 }
 
 .message {
@@ -22,6 +23,7 @@ footer {
   background-color: var(--color-text);
   border: none;
   border-radius: var(--border-radius-oval);
+  flex-shrink: 0;
 }
 
 .signUp:hover {
@@ -85,4 +87,38 @@ footer {
 .hidden {
   position: absolute;
   left: -999999999px;
+}
+
+@media screen and (max-width: 950px) {
+  .newsletter {
+    text-align: center;
+    flex-direction: column;
+    gap: var(--gap-med);
+  }
+
+  .links {
+    gap: var(--gap-lg);
+  }
+
+  .group {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-lg);
+  }
+
+  .navLinks {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .navLinksSet {
+    width: 100%;
+  }
+
+  .specialLinks {
+    flex-direction: column;
+    gap: var(--gap-med);
+  }
 }

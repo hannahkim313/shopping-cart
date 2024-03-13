@@ -32,7 +32,7 @@ const Footer = () => (
             <div className={styles.navLinksSet}>
               <h3>GET HELP</h3>
               <p>Order Status</p>
-              <p>Shipping and Delivery</p>
+              <p>Shipping & Delivery</p>
               <p>Order Cancellation</p>
               <p>Returns</p>
               <p>FAQs</p>
