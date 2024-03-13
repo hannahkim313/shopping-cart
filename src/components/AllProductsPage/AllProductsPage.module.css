@@ -17,3 +17,15 @@
   position: absolute;
   left: -999999999px;
 }
+
+@media screen and (max-width: 750px) {
+  .products {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .products {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

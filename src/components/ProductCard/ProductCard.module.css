@@ -24,3 +24,10 @@
   object-fit: contain;
   border-radius: var(--border-radius-rounded-corners);
 }
+
+@media screen and (max-width: 750px) {
+  .productImg {
+    width: 200px;
+    height: 200px;
+  }
+}
