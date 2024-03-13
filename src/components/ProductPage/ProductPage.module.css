@@ -8,7 +8,7 @@
 }
 
 .productImg {
-  height: 500px;
+  height: 450px;
   padding: 1rem;
 }
 
@@ -114,4 +114,20 @@
 .hidden {
   position: absolute;
   left: -999999999px;
+}
+
+@media screen and (max-width: 950px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .productImg {
+    width: 250px;
+    height: auto;
+    align-self: center;
+  }
+
+  .productInfoContainer {
+    width: 100%;
+  }
 }
