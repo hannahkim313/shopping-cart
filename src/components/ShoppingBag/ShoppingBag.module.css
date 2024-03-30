@@ -1,3 +1,10 @@
+.contentContainer {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+}
+
 .main {
   padding: var(--padding-split-lg);
   border-top: 1px solid var(--color-neutral-2);
@@ -168,5 +175,28 @@
 
   .productCard .info {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .main {
+    padding: var(--padding-med);
+  }
+
+  .productCard {
+    flex-direction: column;
+  }
+
+  .productCard .image {
+    width: 100px;
+    height: auto;
+  }
+
+  .productCard .info {
+    gap: var(--gap-med);
+  }
+
+  .info .group {
+    gap: var(--gap-med);
   }
 }

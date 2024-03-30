@@ -1,3 +1,10 @@
+.contentContainer {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+}
+
 .main {
   padding: var(--padding-lg);
   border-top: 1px solid var(--color-neutral-2);
@@ -25,6 +32,10 @@
 }
 
 @media screen and (max-width: 450px) {
+  .products h1 {
+    text-align: center;
+  }
+
   .products {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }

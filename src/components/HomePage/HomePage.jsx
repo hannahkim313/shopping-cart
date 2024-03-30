@@ -4,10 +4,12 @@ import styles from './HomePage.module.css';
 import Banner from '../Banner/Banner';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Sidebar from '../Sidebar/Sidebar';
 
 const HomePage = ({ numBagItems }) => (
-  <>
+  <div className={styles.contentContainer}>
     <Header numBagItems={numBagItems} />
+    <Sidebar />
     <main className={styles.main}>
       <h1 className={styles.hidden}>Urban Thread home page</h1>
       <Banner />
@@ -98,7 +100,7 @@ const HomePage = ({ numBagItems }) => (
       </aside>
     </main>
     <Footer />
-  </>
+  </div>
 );
 
 HomePage.propTypes = {

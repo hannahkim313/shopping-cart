@@ -122,3 +122,16 @@ footer {
     gap: var(--gap-med);
   }
 }
+
+@media screen and (max-width: 450px) {
+  .newsletter {
+    padding: var(--padding-med);
+  }
+  .navLinks {
+    gap: var(--gap-sm);
+  }
+
+  .links {
+    padding: var(--padding-med);
+  }
+}

@@ -14,7 +14,7 @@ const ProductPage = ({
   const sendProductData = () => handleAddToBag(data);
 
   return (
-    <>
+    <div className={styles.contentContainer}>
       <Header numBagItems={numBagItems} />
       <main className={styles.main}>
         <img className={styles.productImg} src={data.image} alt="" />
@@ -57,7 +57,7 @@ const ProductPage = ({
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

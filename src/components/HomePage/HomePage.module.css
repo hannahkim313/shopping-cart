@@ -1,3 +1,10 @@
+.contentContainer {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+}
+
 .main {
   grid-row: 2 / 3;
 }
@@ -83,6 +90,16 @@
 
 @media screen and (max-width: 950px) {
   .story .content {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .motto {
+    padding: var(--padding-lg);
+  }
+
+  .navLinks {
     flex-direction: column;
   }
 }

@@ -118,14 +118,14 @@ const ShoppingBag = ({
   );
 
   return (
-    <>
+    <div className={styles.contentContainer}>
       <Header numBagItems={numBagItems} />
       <main className={styles.main}>
         <h1>Your Bag</h1>
         {numBagItems === 0 ? emptyContent : checkoutContent()}
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

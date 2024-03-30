@@ -1,3 +1,10 @@
+.contentContainer {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+}
+
 .main {
   padding: var(--padding-lg);
   border-top: 1px solid var(--color-neutral-2);
@@ -129,5 +136,15 @@
 
   .productInfoContainer {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .productInfoContainer {
+    text-align: center;
+  }
+
+  .rating {
+    flex-direction: column;
   }
 }

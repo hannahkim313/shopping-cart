@@ -32,7 +32,7 @@ const AllProductsPage = ({
   }
 
   return (
-    <>
+    <div className={styles.contentContainer}>
       <Header numBagItems={numBagItems} />
       <main className={styles.main}>
         <h1>{capitalize(category)}</h1>
@@ -62,7 +62,7 @@ const AllProductsPage = ({
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

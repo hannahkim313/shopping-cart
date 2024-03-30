@@ -53,6 +53,9 @@ const Header = ({ numBagItems }) => (
         {numBagItems > 0 && <p className={styles.bagCount}>{numBagItems}</p>}
       </div>
     </div>
+    <button className={styles.mobileMenu} type="button">
+      <img src="/src/assets/images/menu.svg" alt="Sidebar menu" />
+    </button>
   </header>
 );
 
