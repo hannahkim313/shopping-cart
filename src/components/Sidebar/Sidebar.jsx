@@ -5,6 +5,8 @@ import styles from './Sidebar.module.css';
 const Sidebar = ({ handleMobileMenu, isMobileMenuOpen }) => {
   const closeMobileMenu = () => handleMobileMenu(false);
 
+  // TODO: When clicking on nav link in sidebar, close sidebar
+
   return (
     <aside
       className={`${styles.sidebar} ${isMobileMenuOpen ? styles.open : ''}`}
@@ -19,10 +21,14 @@ const Sidebar = ({ handleMobileMenu, isMobileMenuOpen }) => {
       <nav>
         <ul className={styles.links}>
           <li>
-            <Link to="/men">Men</Link>
+            <Link to="/men" onClick={closeMobileMenu}>
+              Men
+            </Link>
           </li>
           <li>
-            <Link to="/women">Women</Link>
+            <Link to="/women" onClick={closeMobileMenu}>
+              Women
+            </Link>
           </li>
           <li>
             <button type="button">Kids</button>
@@ -35,7 +41,9 @@ const Sidebar = ({ handleMobileMenu, isMobileMenuOpen }) => {
         <ul className={styles.links}>
           <li>
             <img src="/src/assets/images/shopping-bag.svg" alt="" />
-            <Link to="/bag">Bag</Link>
+            <Link to="/bag" onClick={closeMobileMenu}>
+              Bag
+            </Link>
           </li>
           <li>
             <img src="/src/assets/images/favorite.svg" alt="" />
