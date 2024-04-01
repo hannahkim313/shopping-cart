@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Fragment } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import Sidebar from '../Sidebar/Sidebar';
 import styles from './ShoppingBag.module.css';
 
 const ShoppingBag = ({
@@ -11,6 +12,8 @@ const ShoppingBag = ({
   numBagItems,
   handleQuantityChange,
   handleRemoveFromBag,
+  handleMobileMenu,
+  isMobileMenuOpen,
 }) => {
   const emptyContent = (
     <>
@@ -118,8 +121,16 @@ const ShoppingBag = ({
   );
 
   return (
-    <div className={styles.contentContainer}>
-      <Header numBagItems={numBagItems} />
+    <div
+      className={`${styles.contentContainer} ${
+        isMobileMenuOpen ? styles.overflow : ''
+      }`}
+    >
+      <Header numBagItems={numBagItems} handleMobileMenu={handleMobileMenu} />
+      <Sidebar
+        handleMobileMenu={handleMobileMenu}
+        isMobileMenuOpen={isMobileMenuOpen}
+      />
       <main className={styles.main}>
         <h1>Your Bag</h1>
         {numBagItems === 0 ? emptyContent : checkoutContent()}
@@ -134,6 +145,8 @@ ShoppingBag.propTypes = {
   numBagItems: PropTypes.number.isRequired,
   handleQuantityChange: PropTypes.func.isRequired,
   handleRemoveFromBag: PropTypes.func.isRequired,
+  handleMobileMenu: PropTypes.func.isRequired,
+  isMobileMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default ShoppingBag;

@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import styles from './ProductPage.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import StarRating from '../StarRating/StarRating';
+import Sidebar from '../Sidebar/Sidebar';
+import styles from './ProductPage.module.css';
 
 const ProductPage = ({
   data,
@@ -10,12 +11,22 @@ const ProductPage = ({
   isMaxQuantity,
   id,
   handleAddToBag,
+  handleMobileMenu,
+  isMobileMenuOpen,
 }) => {
   const sendProductData = () => handleAddToBag(data);
 
   return (
-    <div className={styles.contentContainer}>
-      <Header numBagItems={numBagItems} />
+    <div
+      className={`${styles.contentContainer} ${
+        isMobileMenuOpen ? styles.overflow : ''
+      }`}
+    >
+      <Header numBagItems={numBagItems} handleMobileMenu={handleMobileMenu} />
+      <Sidebar
+        handleMobileMenu={handleMobileMenu}
+        isMobileMenuOpen={isMobileMenuOpen}
+      />
       <main className={styles.main}>
         <img className={styles.productImg} src={data.image} alt="" />
         <div className={styles.productInfoContainer}>
@@ -68,6 +79,8 @@ ProductPage.propTypes = {
     .isRequired,
   id: PropTypes.number.isRequired,
   handleAddToBag: PropTypes.func.isRequired,
+  handleMobileMenu: PropTypes.func.isRequired,
+  isMobileMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default ProductPage;

@@ -19,7 +19,15 @@ header button {
 }
 
 .mobileMenu {
+  padding: var(--padding-xsm);
+  border-radius: var(--border-radius-circle);
+  grid-column: 3 / 4;
+  justify-self: flex-end;
   display: none;
+}
+
+.mobileMenu:hover {
+  background-color: var(--color-neutral-2);
 }
 
 .navLinksProducts ul {
@@ -104,9 +112,6 @@ header button {
   }
 
   .mobileMenu {
-    padding: var(--padding-xsm);
-    grid-column: 3 / 4;
     display: initial;
-    justify-self: flex-end;
   }
 }

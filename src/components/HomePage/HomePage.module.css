@@ -5,6 +5,10 @@
   position: relative;
 }
 
+.contentContainer.overflow {
+  overflow: hidden;
+}
+
 .main {
   grid-row: 2 / 3;
 }

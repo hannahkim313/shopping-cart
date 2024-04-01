@@ -4,6 +4,9 @@ import './App.module.css';
 
 const App = () => {
   const [bagItems, setBagItems] = useState([]);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleMobileMenu = (isOpen) => setMobileMenuOpen(isOpen);
 
   const handleAddToBag = (data) => {
     const newItem = data;
@@ -52,6 +55,8 @@ const App = () => {
       handleAddToBag={handleAddToBag}
       handleQuantityChange={handleQuantityChange}
       handleRemoveFromBag={handleRemoveFromBag}
+      handleMobileMenu={handleMobileMenu}
+      isMobileMenuOpen={isMobileMenuOpen}
     />
   );
 };

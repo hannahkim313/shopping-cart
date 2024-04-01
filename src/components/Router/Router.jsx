@@ -13,11 +13,19 @@ const Router = ({
   handleAddToBag,
   handleQuantityChange,
   handleRemoveFromBag,
+  handleMobileMenu,
+  isMobileMenuOpen,
 }) => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage numBagItems={numBagItems} />,
+      element: (
+        <HomePage
+          numBagItems={numBagItems}
+          handleMobileMenu={handleMobileMenu}
+          isMobileMenuOpen={isMobileMenuOpen}
+        />
+      ),
       errorElement: <ErrorPage />,
     },
     {
@@ -29,6 +37,8 @@ const Router = ({
           numBagItems={numBagItems}
           isMaxQuantity={isMaxQuantity}
           handleAddToBag={handleAddToBag}
+          handleMobileMenu={handleMobileMenu}
+          isMobileMenuOpen={isMobileMenuOpen}
         />
       ),
     },
@@ -41,6 +51,8 @@ const Router = ({
           numBagItems={numBagItems}
           isMaxQuantity={isMaxQuantity}
           handleAddToBag={handleAddToBag}
+          handleMobileMenu={handleMobileMenu}
+          isMobileMenuOpen={isMobileMenuOpen}
         />
       ),
     },
@@ -52,6 +64,8 @@ const Router = ({
           numBagItems={numBagItems}
           handleQuantityChange={handleQuantityChange}
           handleRemoveFromBag={handleRemoveFromBag}
+          handleMobileMenu={handleMobileMenu}
+          isMobileMenuOpen={isMobileMenuOpen}
         />
       ),
     },
@@ -68,6 +82,8 @@ Router.propTypes = {
   handleAddToBag: PropTypes.func.isRequired,
   handleQuantityChange: PropTypes.func.isRequired,
   handleRemoveFromBag: PropTypes.func.isRequired,
+  handleMobileMenu: PropTypes.func.isRequired,
+  isMobileMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default Router;

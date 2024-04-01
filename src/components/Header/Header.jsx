@@ -2,65 +2,74 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
-const Header = ({ numBagItems }) => (
-  <header>
-    <Link to="/">
-      <img
-        className={styles.logo}
-        src="/src/assets/images/logo.png"
-        alt="Urban Thread home page"
-      />
-    </Link>
-    <nav className={styles.navLinksProducts}>
-      <ul>
-        <li>
-          <Link to="/men">Men</Link>
-        </li>
-        <li>
-          <Link to="/women">Women</Link>
-        </li>
-        <li>
-          <button type="button">Kids</button>
-        </li>
-        <li>
-          <button type="button">Sale</button>
-        </li>
-      </ul>
-    </nav>
-    <div className={styles.navLinksPages}>
-      <button type="button">
+const Header = ({ numBagItems, handleMobileMenu }) => {
+  const openMobileMenu = () => handleMobileMenu(true);
+
+  return (
+    <header>
+      <Link to="/">
         <img
-          className={styles.icon}
-          src="/src/assets/images/account.svg"
-          alt="My account"
+          className={styles.logo}
+          src="/src/assets/images/logo.png"
+          alt="Urban Thread home page"
         />
-      </button>
-      <button type="button">
-        <img
-          className={styles.icon}
-          src="/src/assets/images/favorite.svg"
-          alt="My favorites"
-        />
-      </button>
-      <div className={styles.bag}>
-        <Link to="/bag">
+      </Link>
+      <nav className={styles.navLinksProducts}>
+        <ul>
+          <li>
+            <Link to="/men">Men</Link>
+          </li>
+          <li>
+            <Link to="/women">Women</Link>
+          </li>
+          <li>
+            <button type="button">Kids</button>
+          </li>
+          <li>
+            <button type="button">Sale</button>
+          </li>
+        </ul>
+      </nav>
+      <div className={styles.navLinksPages}>
+        <button type="button">
           <img
             className={styles.icon}
-            src="/src/assets/images/shopping-bag.svg"
-            alt="My shopping bag"
+            src="/src/assets/images/account.svg"
+            alt="My account"
           />
-        </Link>
-        {numBagItems > 0 && <p className={styles.bagCount}>{numBagItems}</p>}
+        </button>
+        <button type="button">
+          <img
+            className={styles.icon}
+            src="/src/assets/images/favorite.svg"
+            alt="My favorites"
+          />
+        </button>
+        <div className={styles.bag}>
+          <Link to="/bag">
+            <img
+              className={styles.icon}
+              src="/src/assets/images/shopping-bag.svg"
+              alt="My shopping bag"
+            />
+          </Link>
+          {numBagItems > 0 && <p className={styles.bagCount}>{numBagItems}</p>}
+        </div>
       </div>
-    </div>
-    <button className={styles.mobileMenu} type="button">
-      <img src="/src/assets/images/menu.svg" alt="Sidebar menu" />
-    </button>
-  </header>
-);
+      <button
+        className={styles.mobileMenu}
+        type="button"
+        onClick={openMobileMenu}
+      >
+        <img src="/src/assets/images/menu.svg" alt="Sidebar menu" />
+      </button>
+    </header>
+  );
+};
 
 Header.propTypes = {
   numBagItems: PropTypes.number.isRequired,
+  handleMobileMenu: PropTypes.func.isRequired,
 };
 
 export default Header;

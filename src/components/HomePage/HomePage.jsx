@@ -1,15 +1,22 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import styles from './HomePage.module.css';
 import Banner from '../Banner/Banner';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Sidebar from '../Sidebar/Sidebar';
+import styles from './HomePage.module.css';
 
-const HomePage = ({ numBagItems }) => (
-  <div className={styles.contentContainer}>
-    <Header numBagItems={numBagItems} />
-    <Sidebar />
+const HomePage = ({ numBagItems, handleMobileMenu, isMobileMenuOpen }) => (
+  <div
+    className={`${styles.contentContainer} ${
+      isMobileMenuOpen ? styles.overflow : ''
+    }`}
+  >
+    <Header numBagItems={numBagItems} handleMobileMenu={handleMobileMenu} />
+    <Sidebar
+      handleMobileMenu={handleMobileMenu}
+      isMobileMenuOpen={isMobileMenuOpen}
+    />
     <main className={styles.main}>
       <h1 className={styles.hidden}>Urban Thread home page</h1>
       <Banner />
@@ -105,6 +112,8 @@ const HomePage = ({ numBagItems }) => (
 
 HomePage.propTypes = {
   numBagItems: PropTypes.number.isRequired,
+  handleMobileMenu: PropTypes.func.isRequired,
+  isMobileMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default HomePage;
