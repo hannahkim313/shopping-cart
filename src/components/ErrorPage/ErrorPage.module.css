@@ -12,7 +12,7 @@
 }
 
 .errorImg {
-  width: 500px;
+  width: 400px;
 }
 
 .errorText {
@@ -36,4 +36,24 @@
   left: -999999999px;
 }
 
-/* TODO: Add media queries */
+@media screen and (max-height: 600px) {
+  .errorImg {
+    width: 300px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .errorImg {
+    width: 200px;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  .main {
+    gap: var(--gap-med);
+  }
+
+  .errorImg {
+    width: 150px;
+  }
+}

@@ -5,8 +5,6 @@ import styles from './Sidebar.module.css';
 const Sidebar = ({ handleMobileMenu, isMobileMenuOpen }) => {
   const closeMobileMenu = () => handleMobileMenu(false);
 
-  // TODO: When clicking on nav link in sidebar, close sidebar
-
   return (
     <aside
       className={`${styles.sidebar} ${isMobileMenuOpen ? styles.open : ''}`}
