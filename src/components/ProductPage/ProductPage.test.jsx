@@ -33,6 +33,10 @@ const mockData = [
   },
 ];
 
+const mockHandleMobileMenu = vi.fn();
+
+const mockIsMobileMenuOpen = vi.fn();
+
 const mockHandleAddToBag = vi.fn();
 
 const mockIsMaxQuantity = vi.fn().mockImplementation((id) => {
@@ -52,6 +56,8 @@ describe('ProductPage component', () => {
             isMaxQuantity={mockIsMaxQuantity}
             id={2}
             handleAddToBag={mockHandleAddToBag}
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />
         );
 
@@ -70,6 +76,8 @@ describe('ProductPage component', () => {
             isMaxQuantity={mockIsMaxQuantity}
             id={1}
             handleAddToBag={mockHandleAddToBag}
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />
         )
       );
@@ -77,7 +85,7 @@ describe('ProductPage component', () => {
       afterEach(() => vi.restoreAllMocks());
 
       it('renders the product image', () => {
-        const productImg = screen.getAllByRole('img')[4];
+        const productImg = screen.getAllByRole('img')[12];
         expect(productImg).toHaveAttribute('src', mockData[0].image);
       });
 
@@ -132,6 +140,8 @@ describe('ProductPage component', () => {
           isMaxQuantity={mockIsMaxQuantity}
           id={1}
           handleAddToBag={mockHandleAddToBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 

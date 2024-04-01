@@ -45,6 +45,10 @@ const mockHandleQuantityChange = vi.fn();
 
 const mockHandleRemoveFromBag = vi.fn();
 
+const mockHandleMobileMenu = vi.fn();
+
+const mockIsMobileMenuOpen = vi.fn();
+
 describe('ShoppingBag component', () => {
   describe('rendering of elements when the shopping bag is empty', () => {
     afterEach(() => vi.restoreAllMocks());
@@ -56,6 +60,8 @@ describe('ShoppingBag component', () => {
           numBagItems={0}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -74,6 +80,8 @@ describe('ShoppingBag component', () => {
           numBagItems={0}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -96,6 +104,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -106,7 +116,7 @@ describe('ShoppingBag component', () => {
         screen.getByRole('heading', { level: 2, name: 'Product 1' })
       ).toBeInTheDocument();
       expect(screen.getByText('$10.99')).toBeInTheDocument();
-      expect(screen.getAllByRole('img')[4]).toHaveAttribute(
+      expect(screen.getAllByRole('img')[12]).toHaveAttribute(
         'src',
         'product-1.jpg'
       );
@@ -114,7 +124,7 @@ describe('ShoppingBag component', () => {
         screen.getByRole('heading', { level: 2, name: 'Product 2' })
       ).toBeInTheDocument();
       expect(screen.getByText('$15.99')).toBeInTheDocument();
-      expect(screen.getAllByRole('img')[7]).toHaveAttribute(
+      expect(screen.getAllByRole('img')[15]).toHaveAttribute(
         'src',
         'product-2.jpg'
       );
@@ -127,6 +137,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -144,6 +156,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -179,6 +193,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -195,6 +211,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -218,6 +236,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -234,6 +254,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -252,6 +274,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={mockHandleQuantityChange}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -268,6 +292,8 @@ describe('ShoppingBag component', () => {
           numBagItems={numBagItems}
           handleQuantityChange={vi.fn()}
           handleRemoveFromBag={mockHandleRemoveFromBag}
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />,
         {
           route: '/bag',
@@ -292,6 +318,8 @@ describe('ShoppingBag component', () => {
             numBagItems={0}
             handleQuantityChange={mockHandleQuantityChange}
             handleRemoveFromBag={mockHandleRemoveFromBag}
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />,
           '/men',
           <AllProductsPage
@@ -299,6 +327,8 @@ describe('ShoppingBag component', () => {
             numBagItems={0}
             isMaxQuantity={mockIsMaxQuantity}
             handleAddToBag={mockHandleAddToBag}
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />
         ),
         { route: '/bag' }
@@ -323,6 +353,8 @@ describe('ShoppingBag component', () => {
             numBagItems={0}
             handleQuantityChange={mockHandleQuantityChange}
             handleRemoveFromBag={mockHandleRemoveFromBag}
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />,
           '/women',
           <AllProductsPage
@@ -330,6 +362,8 @@ describe('ShoppingBag component', () => {
             numBagItems={0}
             isMaxQuantity={mockIsMaxQuantity}
             handleAddToBag={mockHandleAddToBag}
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />
         ),
         { route: '/bag' }

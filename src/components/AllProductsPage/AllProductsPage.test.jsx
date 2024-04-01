@@ -15,6 +15,10 @@ const mockHandleAddToBag = vi.fn();
 
 const mockIsMaxQuantity = vi.fn();
 
+const mockHandleMobileMenu = vi.fn();
+
+const mockIsMobileMenuOpen = vi.fn();
+
 const mockData = [
   {
     category: 'test',
@@ -77,6 +81,8 @@ describe('AllProductsPage component with mocked products', () => {
             handleAddToBag={mockHandleAddToBag}
             isMaxQuantity={mockIsMaxQuantity}
             category="test"
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />,
           'products?/:productId?',
           <ProductPage
@@ -85,6 +91,8 @@ describe('AllProductsPage component with mocked products', () => {
             isMaxQuantity={mockIsMaxQuantity}
             id={1}
             handleAddToBag={mockHandleAddToBag}
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />
         ),
         { route: '/products/1' }
@@ -111,6 +119,8 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="test"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
@@ -130,6 +140,8 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="men's clothing"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
@@ -147,6 +159,8 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="example"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
@@ -168,6 +182,8 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="test"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
@@ -188,6 +204,8 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="test"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
@@ -205,6 +223,8 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="test"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
@@ -220,6 +240,8 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="test"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
@@ -236,6 +258,8 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="test"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
@@ -252,11 +276,13 @@ describe('AllProductsPage component with mocked products', () => {
           handleAddToBag={mockHandleAddToBag}
           isMaxQuantity={mockIsMaxQuantity}
           category="test"
+          handleMobileMenu={mockHandleMobileMenu}
+          isMobileMenuOpen={mockIsMobileMenuOpen}
         />
       );
 
       await waitFor(() => {
-        expect(screen.getAllByRole('link')).toHaveLength(9);
+        expect(screen.getAllByRole('link')).toHaveLength(12);
       });
     });
   });
@@ -280,6 +306,8 @@ describe('AllProductsPage component with mocked products', () => {
             handleAddToBag={mockHandleAddToBag}
             isMaxQuantity={mockIsMaxQuantity}
             category="test"
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />,
           '/products?/:productId?',
           <ProductPage
@@ -288,6 +316,8 @@ describe('AllProductsPage component with mocked products', () => {
             isMaxQuantity={mockIsMaxQuantity}
             id={1}
             handleAddToBag={mockHandleAddToBag}
+            handleMobileMenu={mockHandleMobileMenu}
+            isMobileMenuOpen={mockIsMobileMenuOpen}
           />
         ),
         { route: '/test' }
