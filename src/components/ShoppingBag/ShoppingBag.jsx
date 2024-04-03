@@ -5,6 +5,8 @@ import { Fragment } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
+import favoriteImg from '../../assets/images/favorite.svg';
+import deleteImg from '../../assets/images/delete.svg';
 import styles from './ShoppingBag.module.css';
 
 const ShoppingBag = ({
@@ -67,17 +69,14 @@ const ShoppingBag = ({
                   </label>
                   <div className={styles.buttons}>
                     <button type="button">
-                      <img
-                        src="/src/assets/images/favorite.svg"
-                        alt="Move to Favorites"
-                      />
+                      <img src={favoriteImg} alt="Move to Favorites" />
                     </button>
                     <button
                       type="button"
                       aria-label="Remove"
                       onClick={() => handleRemoveFromBag(data.id)}
                     >
-                      <img src="/src/assets/images/delete.svg" alt="Remove" />
+                      <img src={deleteImg} alt="Remove" />
                     </button>
                   </div>
                 </div>

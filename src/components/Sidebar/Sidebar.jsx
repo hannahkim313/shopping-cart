@@ -1,5 +1,12 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import closeImg from '../../assets/images/close.svg';
+import bagImg from '../../assets/images/shopping-bag.svg';
+import favoriteImg from '../../assets/images/favorite.svg';
+import accountImg from '../../assets/images/account.svg';
+import ordersImg from '../../assets/images/orders.svg';
+import storeImg from '../../assets/images/store.svg';
+import helpImg from '../../assets/images/help.svg';
 import styles from './Sidebar.module.css';
 
 const Sidebar = ({ handleMobileMenu, isMobileMenuOpen }) => {
@@ -14,7 +21,7 @@ const Sidebar = ({ handleMobileMenu, isMobileMenuOpen }) => {
         type="button"
         onClick={closeMobileMenu}
       >
-        <img src="/src/assets/images/close.svg" alt="Close sidebar" />
+        <img src={closeImg} alt="Close sidebar" />
       </button>
       <nav>
         <ul className={styles.links}>
@@ -38,29 +45,29 @@ const Sidebar = ({ handleMobileMenu, isMobileMenuOpen }) => {
         <div className={styles.divider} />
         <ul className={styles.links}>
           <li>
-            <img src="/src/assets/images/shopping-bag.svg" alt="" />
+            <img src={bagImg} alt="" />
             <Link to="/bag" onClick={closeMobileMenu}>
               Bag
             </Link>
           </li>
           <li>
-            <img src="/src/assets/images/favorite.svg" alt="" />
+            <img src={favoriteImg} alt="" />
             <button type="button">Favorites</button>
           </li>
           <li>
-            <img src="/src/assets/images/account.svg" alt="" />
+            <img src={accountImg} alt="" />
             <button type="button">My Account</button>
           </li>
           <li>
-            <img src="/src/assets/images/orders.svg" alt="" />
+            <img src={ordersImg} alt="" />
             <button type="button">Orders</button>
           </li>
           <li>
-            <img src="/src/assets/images/store.svg" alt="" />
+            <img src={storeImg} alt="" />
             <button type="button">Find a Store</button>
           </li>
           <li>
-            <img src="/src/assets/images/help.svg" alt="" />
+            <img src={helpImg} alt="" />
             <button type="button">Help</button>
           </li>
         </ul>

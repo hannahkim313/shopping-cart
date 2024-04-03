@@ -1,4 +1,9 @@
 import { Link } from 'react-router-dom';
+import youtubeImg from '../../assets/images/youtube.svg';
+import instagramImg from '../../assets/images/instagram.svg';
+import tiktokImg from '../../assets/images/tiktok.svg';
+import twitterImg from '../../assets/images/twitter.svg';
+import facebookImg from '../../assets/images/facebook.svg';
 import styles from './Footer.module.css';
 
 const Footer = () => (
@@ -47,29 +52,17 @@ const Footer = () => (
           </div>
           <div className={styles.socials}>
             <h3 className={styles.hidden}>Our socials</h3>
+            <img className={styles.icon} src={youtubeImg} alt="Youtube icon" />
             <img
               className={styles.icon}
-              src="/src/assets/images/youtube.svg"
-              alt="Youtube icon"
-            />
-            <img
-              className={styles.icon}
-              src="/src/assets/images/instagram.svg"
+              src={instagramImg}
               alt="Instagram icon"
             />
+            <img className={styles.icon} src={tiktokImg} alt="TikTok icon" />
+            <img className={styles.icon} src={twitterImg} alt="Twitter icon" />
             <img
               className={styles.icon}
-              src="/src/assets/images/tiktok.svg"
-              alt="TikTok icon"
-            />
-            <img
-              className={styles.icon}
-              src="/src/assets/images/twitter.svg"
-              alt="Twitter icon"
-            />
-            <img
-              className={styles.icon}
-              src="/src/assets/images/facebook.svg"
+              src={facebookImg}
               alt="Facebook icon"
             />
           </div>

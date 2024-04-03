@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import logoImg from '../../assets/images/logo.png';
+import accountImg from '../../assets/images/account.svg';
+import favoriteImg from '../../assets/images/favorite.svg';
+import bagImg from '../../assets/images/shopping-bag.svg';
+import menuImg from '../../assets/images/menu.svg';
 import styles from './Header.module.css';
 
 const Header = ({ numBagItems, handleMobileMenu }) => {
@@ -10,7 +15,7 @@ const Header = ({ numBagItems, handleMobileMenu }) => {
       <Link to="/">
         <img
           className={styles.logo}
-          src="/src/assets/images/logo.png"
+          src={logoImg}
           alt="Urban Thread home page"
         />
       </Link>
@@ -32,26 +37,14 @@ const Header = ({ numBagItems, handleMobileMenu }) => {
       </nav>
       <div className={styles.navLinksPages}>
         <button type="button">
-          <img
-            className={styles.icon}
-            src="/src/assets/images/account.svg"
-            alt="My account"
-          />
+          <img className={styles.icon} src={accountImg} alt="My account" />
         </button>
         <button type="button">
-          <img
-            className={styles.icon}
-            src="/src/assets/images/favorite.svg"
-            alt="My favorites"
-          />
+          <img className={styles.icon} src={favoriteImg} alt="My favorites" />
         </button>
         <div className={styles.bag}>
           <Link to="/bag">
-            <img
-              className={styles.icon}
-              src="/src/assets/images/shopping-bag.svg"
-              alt="My shopping bag"
-            />
+            <img className={styles.icon} src={bagImg} alt="My shopping bag" />
           </Link>
           {numBagItems > 0 && <p className={styles.bagCount}>{numBagItems}</p>}
         </div>
@@ -61,7 +54,7 @@ const Header = ({ numBagItems, handleMobileMenu }) => {
         type="button"
         onClick={openMobileMenu}
       >
-        <img src="/src/assets/images/menu.svg" alt="Sidebar menu" />
+        <img src={menuImg} alt="Sidebar menu" />
       </button>
     </header>
   );

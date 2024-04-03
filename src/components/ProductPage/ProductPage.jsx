@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import StarRating from '../StarRating/StarRating';
 import Sidebar from '../Sidebar/Sidebar';
+import favoriteImg from '../../assets/images/favorite.svg';
 import styles from './ProductPage.module.css';
 
 const ProductPage = ({
@@ -62,7 +63,7 @@ const ProductPage = ({
             </button>
             <button className={styles.favorite} type="button">
               Favorite
-              <img src="/src/assets/images/favorite.svg" alt="" />
+              <img src={favoriteImg} alt="" />
             </button>
           </div>
         </div>

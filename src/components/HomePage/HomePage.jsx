@@ -4,6 +4,9 @@ import Banner from '../Banner/Banner';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Sidebar from '../Sidebar/Sidebar';
+import photo1 from '../../assets/images/home-1.jpg';
+import photo2 from '../../assets/images/home-2.jpg';
+import photo3 from '../../assets/images/home-3.jpg';
 import styles from './HomePage.module.css';
 
 const HomePage = ({ numBagItems, handleMobileMenu, isMobileMenuOpen }) => (
@@ -22,25 +25,13 @@ const HomePage = ({ numBagItems, handleMobileMenu, isMobileMenuOpen }) => (
       <Banner />
       <div className={styles.images}>
         <div>
-          <img
-            className={styles.image}
-            src="/src/assets/images/home-1.jpg"
-            alt=""
-          />
+          <img className={styles.image} src={photo1} alt="" />
         </div>
         <div>
-          <img
-            className={styles.image}
-            src="/src/assets/images/home-2.jpg"
-            alt=""
-          />
+          <img className={styles.image} src={photo2} alt="" />
         </div>
         <div>
-          <img
-            className={styles.image}
-            src="/src/assets/images/home-3.jpg"
-            alt=""
-          />
+          <img className={styles.image} src={photo3} alt="" />
         </div>
       </div>
       <h2 className={styles.hidden}>Brand motto</h2>
