@@ -7,7 +7,7 @@ https://shopping-cart-c0j.pages.dev/
 This project, created by The Odin Project, is a mock e-commerce apparel website that offers a seamless online shopping experience. _Urband Thread_ aims to replicate the user experience and interaction of browsing and selecting products while also focusing on implementing key React concepts and practices:
 
 - Client-side routing
-  - Enables smooth navigation between pages, simulating the slow of a single-page application.
+  - Enables smooth navigation between pages, simulating the flow of a single-page application.
 - Making, managing, and handling API calls
   - Utilizes the `useEffect()` hook to fetch product data from the FakeStore API as well as handle errors, create custom hooks, and optimize performance by preventing multiple fetch requests.
 - CSS Modules
